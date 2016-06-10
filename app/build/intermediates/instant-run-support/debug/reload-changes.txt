@@ -1,0 +1,2 @@
+CHANGED,D:\SalesForceMobileSDK\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\euromonitor\RecognizeActivity$override.class
+CHANGED,D:\SalesForceMobileSDK\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class

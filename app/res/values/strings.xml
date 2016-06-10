@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="account_type">com.euromonitor.login</string>
+	<string name="app_name"><b>app</b></string>
+	<string name="app_package">com.euromonitor</string>
+    <string name="welcome">Welcome %s</string>
+	<string name="logout_button">Logout</string>
+	<string name="fetch_contacts_button">Fetch Contacts</string>
+	<string name="fetch_accounts_button">Fetch Accounts</string>
+	<string name="clear_button">Clear</string>
+	<string name="subscription_key">e2e4be4efa234fd6b4ad703d83b0c824</string>
+	<string name="add_subscription_key_tip_title">Subscription Key is Needed</string>
+	<string name="add_subscription_key_tip">Please put your subscription key to source file \"app/res/values/strings.xml\" to enable Vision API calls.</string>
+	<string name="action_settings">Settings</string>
+	<string name="take_photo">Take a Photo</string>
+	<string name="select_image_in_album">From Gallery</string>
+	<string name="select_an_image">Select an Image</string>
+</resources>

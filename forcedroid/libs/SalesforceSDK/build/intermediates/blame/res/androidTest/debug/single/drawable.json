@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\sf__progress_spinner.xml",
+        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\bundles\\debug\\res\\drawable\\sf__progress_spinner.xml"
+    },
+    {
+        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\sf__header_bg.png",
+        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\bundles\\debug\\res\\drawable\\sf__header_bg.png"
+    },
+    {
+        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\sf__toolbar_background.xml",
+        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\bundles\\debug\\res\\drawable\\sf__toolbar_background.xml"
+    }
+]

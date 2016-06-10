@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\sf__icon.png",
+        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\sf__icon.png"
+    },
+    {
+        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\ic_fp_40px.png",
+        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\ic_fp_40px.png"
+    }
+]

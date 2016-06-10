@@ -1,0 +1,4 @@
+include 'forcedroid:libs:SalesforceSDK'
+include 'forcedroid:libs:SmartStore'
+include 'forcedroid:libs:SmartSync'
+include 'app'

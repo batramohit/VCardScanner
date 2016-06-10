@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\sf__icon.png",
+        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-mdpi-v4\\sf__icon.png"
+    },
+    {
+        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\sf__ic_refresh_sync_anim0.png",
+        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-mdpi-v4\\sf__ic_refresh_sync_anim0.png"
+    },
+    {
+        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\sf__highlight_glare.png",
+        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-mdpi-v4\\sf__highlight_glare.png"
+    },
+    {
+        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\sf__edit_icon.png",
+        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-mdpi-v4\\sf__edit_icon.png"
+    }
+]
