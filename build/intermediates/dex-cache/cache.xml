@@ -2,11 +2,109 @@
 <items version="2" >
 
     <item
+        jar="D:\VCardScanner\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.2.1_36284ca3c07e0cfb4e177fc3f389ccd9a003de3b\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\mohit.batra\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.3.1_545cf57cca5a0dec5384b3b2e770792d671ae563\classes.dex" />
+    </item>
+    <item
+        jar="D:\VCardScanner\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\libs\internal_impl-23.2.1.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.2.1_37b43c5b39be378ce0a424474dbb0d0217cc4f9e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\mohit.batra\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpmime\4.3.2\3202421d9425ced69919b282afa644e7ef0e8fef\httpmime-4.3.2.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="3202421d9425ced69919b282afa644e7ef0e8fef">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\httpmime-4.3.2_e5df1b43c97fd8a9c81d1b9115561bc7921bd004\classes.dex" />
+    </item>
+    <item
+        jar="D:\VCardScanner\app\build\intermediates\exploded-aar\com.microsoft.projectoxford\vision\1.0.354\jars\libs\commons-io-2.4.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\commons-io-2.4_5d31a5f92ed12cc4fb5cdba8e5141af5793b9338\classes.dex" />
+    </item>
+    <item
+        jar="D:\VCardScanner\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="052964c152435c02d598f1e1982b99a76d309cdc">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_58a9cce3e107fb6c4b482b57c807f30e84bb831a\classes.dex" />
+    </item>
+    <item
+        jar="D:\VCardScanner\app\build\intermediates\exploded-aar\VCardScanner.forcedroid.libs\SmartStore\unspecified\jars\libs\sqlcipher.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="3ab17257c2e28ceba16a9b3018cecabece15af7c">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\8\sqlcipher_498ae19c2d89da0b9ee722d6e1a6f1fa740d80da\classes.dex" />
+    </item>
+    <item
+        jar="D:\VCardScanner\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.2.1_ac5f3329b41c0b3e2f3f0f2b92e814b86389be92\classes.dex" />
+    </item>
+    <item
         jar="D:\VCardScanner\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.1"
-        sha1="8e381a41e7650178e826253056590fdb9cb0a1ca">
+        sha1="a19af8e820c3db39ddb4922200f59db5278e0bf4">
         <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b89e568a2d689635d38cb5857c2dc7098d07f9e5\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\mohit.batra\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\18.0\cce0823396aa693798f8882e64213b1772032b09\guava-18.0.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="cce0823396aa693798f8882e64213b1772032b09">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\guava-18.0_e5afedfefea37871443c8dd6d35ae6e0bd709cc7\classes.dex" />
+    </item>
+    <item
+        jar="D:\VCardScanner\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.2.1_23a09468cb8b85a09af379030b4bdb101ab6f41c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\mohit.batra\.gradle\caches\modules-2\files-2.1\com.mcxiaoke.volley\library\1.0.19\a8f23f65fc1e522ee4a1a697ee569901a46741fa\library-1.0.19.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="a8f23f65fc1e522ee4a1a697ee569901a46741fa">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\library-1.0.19_21789d9a6b2729e85a421fbd1fdc528731f23a97\classes.dex" />
+    </item>
+    <item
+        jar="D:\VCardScanner\app\build\intermediates\exploded-aar\com.microsoft.projectoxford\vision\1.0.354\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="9b1a002a8b4bdd3d66cbadfdc4b16dfabd8e1042">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.microsoft.projectoxford-vision-1.0.354_f8653cb72ef00dbd3e21a69b5be6f702bd02900f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\mohit.batra\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.2.1_e47c1719cde261bd995635d5b63d125f8f64f2ca\classes.dex" />
+    </item>
+    <item
+        jar="D:\VCardScanner\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.2.1_5f17f2dadd7da35664e781b14be9c97f653919b3\classes.dex" />
     </item>
 
 </items>

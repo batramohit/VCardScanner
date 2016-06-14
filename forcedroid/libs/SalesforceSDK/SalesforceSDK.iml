@@ -118,9 +118,9 @@
     <orderEntry type="library" exported="" name="support-v4-23.2.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="httpcore-4.3.1" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-23.2.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="httpclient-4.3.2" level="project" />
     <orderEntry type="library" exported="" name="animated-vector-drawable-23.2.1" level="project" />
     <orderEntry type="library" exported="" name="support-vector-drawable-23.2.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="httpclient-4.3.2" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-23.2.1" level="project" />
     <orderEntry type="library" exported="" name="org.apache.http.legacy-android-23" level="project" />
   </component>

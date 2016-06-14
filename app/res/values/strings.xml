@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_type">com.euromonitor.login</string>
-	<string name="app_name"><b>app</b></string>
+	<string name="app_name"><b>VCard Scanner</b></string>
 	<string name="app_package">com.euromonitor</string>
     <string name="welcome">Welcome %s</string>
 	<string name="logout_button">Logout</string>

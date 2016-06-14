@@ -35,7 +35,7 @@
 
     <application
         android:name="com.euromonitor.appApp"
-        android:icon="@drawable/sf__icon"
+        android:icon="@mipmap/euromonitor_logo"
         android:label="@string/app_name"
         android:manageSpaceActivity="com.salesforce.androidsdk.ui.ManageSpaceActivity" >
 

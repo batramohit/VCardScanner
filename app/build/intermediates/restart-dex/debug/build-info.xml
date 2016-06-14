@@ -4,7 +4,7 @@
     api-level="23"
     density="420dpi"
     format="7"
-    timestamp="530337576963331"
+    timestamp="3673305898550"
     token="4444375372650319480" >
 
     <task
@@ -20,14 +20,11 @@
         name="verifier"
         duration="0" />
 
-    <artifact
-        location="D:\VCardScanner\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
-
-    <build timestamp="530337576963331" >
+    <build timestamp="3499935506596" >
         <artifact
             location="D:\VCardScanner\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
+    <build timestamp="3673305898550" />
 
 </instant-run>

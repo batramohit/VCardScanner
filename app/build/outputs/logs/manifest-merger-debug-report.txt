@@ -53,7 +53,7 @@ MERGED from [com.android.support:support-v4:23.2.1] D:\VCardScanner\app\build\in
 	android:manageSpaceActivity
 		ADDED from D:\VCardScanner\app\AndroidManifest.xml:12:9-87
 	android:icon
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:9:18-51
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:9:18-57
 	android:name
 		ADDED from D:\VCardScanner\app\AndroidManifest.xml:11:9-31
 activity#com.euromonitor.InitialActivity
