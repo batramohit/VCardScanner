@@ -4,8 +4,13 @@
     api-level="23"
     density="xxhdpi"
     format="7"
+<<<<<<< HEAD
     timestamp="10592727531963"
     token="-6162135721786692860" >
+=======
+    timestamp="7088487580064"
+    token="4444375372650319480" >
+>>>>>>> 6cac42f211bda958b09aca4454322989a91775cf
 
     <task
         name="javac"
@@ -24,7 +29,15 @@
         location="D:\VCardScanner\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
+<<<<<<< HEAD
     <build timestamp="10592727531963" >
+=======
+    <artifact
+        location="D:\VCardScanner\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
+
+    <build timestamp="7088487580064" >
+>>>>>>> 6cac42f211bda958b09aca4454322989a91775cf
         <artifact
             location="D:\VCardScanner\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />

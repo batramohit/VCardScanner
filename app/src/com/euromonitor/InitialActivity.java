@@ -38,9 +38,6 @@ public class InitialActivity extends SalesforceActivity {
                     .setCancelable(false)
                     .show();
         }
-
-
-//        });
     }
 
     @Override
