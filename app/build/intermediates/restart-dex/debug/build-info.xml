@@ -4,8 +4,8 @@
     api-level="23"
     density="420dpi"
     format="7"
-    timestamp="269209311784590"
-    token="-1025692036442771862" >
+    timestamp="530337576963331"
+    token="4444375372650319480" >
 
     <task
         name="javac"
@@ -20,11 +20,14 @@
         name="verifier"
         duration="0" />
 
-    <build timestamp="269181724755461" >
+    <artifact
+        location="D:\VCardScanner\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
+
+    <build timestamp="530337576963331" >
         <artifact
-            location="D:\SalesForceMobileSDK\VCardScanner\app\build\outputs\apk\app-debug.apk"
+            location="D:\VCardScanner\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="269209311784590" />
 
 </instant-run>

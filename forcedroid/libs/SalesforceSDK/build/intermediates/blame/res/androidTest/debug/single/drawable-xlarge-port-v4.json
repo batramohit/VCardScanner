@@ -2,5 +2,9 @@
     {
         "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xlarge-port-v4\\sf__oauth_background.png",
         "source": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xlarge-port-v4\\sf__oauth_background.png"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xlarge-port-v4\\sf__oauth_background.png",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xlarge-port-v4\\sf__oauth_background.png"
     }
 ]

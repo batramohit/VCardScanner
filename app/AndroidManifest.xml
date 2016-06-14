@@ -24,19 +24,12 @@
         <activity
             android:name=".RecognizeActivity"
             android:parentActivityName=".InitialActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".InitialActivity" />
         </activity>
 
         <activity android:name=".MainActivity"
             android:parentActivityName=".RecognizeActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity

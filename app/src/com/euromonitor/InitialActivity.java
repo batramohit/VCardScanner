@@ -1,6 +1,5 @@
 package com.euromonitor;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -9,10 +8,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.salesforce.androidsdk.rest.RestClient;
+import com.salesforce.androidsdk.ui.SalesforceActivity;
+
 /**
  * Created by Mohit.Batra on 10-Jun-16.
  */
-public class InitialActivity extends Activity {
+public class InitialActivity extends SalesforceActivity {
+
+    private RestClient client;
+
+    @Override
+    public void onResume(RestClient client) {
+        this.client = client;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

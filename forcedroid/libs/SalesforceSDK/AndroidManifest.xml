@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.salesforce.androidsdk" 
+	package="com.salesforce.androidsdk"
 	android:versionCode="50"
 	android:versionName="4.1.2">
 
@@ -9,7 +9,6 @@
         android:targetSdkVersion="23" />
 
     <application>
-
         <!-- Metadata for supported app restrictions -->
         <meta-data android:name="android.content.APP_RESTRICTIONS"
             android:resource="@xml/app_restrictions" />
@@ -25,8 +24,7 @@
         </service>
 
         <!-- Login activity -->
-        <activity android:name="com.salesforce.androidsdk.ui.LoginActivity"
-            android:theme="@style/SalesforceSDK.ActionBarTheme" />
+        <activity android:name="com.salesforce.androidsdk.ui.LoginActivity"></activity>
 
         <!-- Passcode activity -->
         <activity android:name="com.salesforce.androidsdk.ui.PasscodeActivity"
@@ -85,3 +83,6 @@
     <!--TODO: Remove the -sdk-23 tag when the minsdk version is 23-->
     <uses-permission-sdk-23 android:name="android.permission.USE_FINGERPRINT" />
 </manifest>
+
+
+

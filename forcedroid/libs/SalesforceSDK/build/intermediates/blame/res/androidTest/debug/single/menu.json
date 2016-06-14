@@ -1,5 +1,13 @@
 [
     {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\sf__clear_custom_url.xml",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\bundles\\debug\\res\\menu\\sf__clear_custom_url.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\sf__login.xml",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\bundles\\debug\\res\\menu\\sf__login.xml"
+    },
+    {
         "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\sf__clear_custom_url.xml",
         "source": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\bundles\\debug\\res\\menu\\sf__clear_custom_url.xml"
     },

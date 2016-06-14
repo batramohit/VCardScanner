@@ -48,9 +48,7 @@
                 android:resource="@xml/authenticator" />
         </service>
  <!-- Login activity -->
-        <activity
-            android:name="com.salesforce.androidsdk.ui.LoginActivity"
-            android:theme="@style/SalesforceSDK.ActionBarTheme" />
+        <activity android:name="com.salesforce.androidsdk.ui.LoginActivity" />
  <!-- Passcode activity -->
         <activity
             android:name="com.salesforce.androidsdk.ui.PasscodeActivity"

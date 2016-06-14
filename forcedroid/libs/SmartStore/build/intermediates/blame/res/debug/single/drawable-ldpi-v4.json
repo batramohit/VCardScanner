@@ -2,5 +2,9 @@
     {
         "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\sf__icon.png",
         "source": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-ldpi-v4\\sf__icon.png"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\sf__icon.png",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-ldpi-v4\\sf__icon.png"
     }
 ]

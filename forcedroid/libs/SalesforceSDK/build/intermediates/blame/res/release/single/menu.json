@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\release\\menu\\sf__login.xml",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\res\\menu\\sf__login.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\release\\menu\\sf__clear_custom_url.xml",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\res\\menu\\sf__clear_custom_url.xml"
+    }
+]

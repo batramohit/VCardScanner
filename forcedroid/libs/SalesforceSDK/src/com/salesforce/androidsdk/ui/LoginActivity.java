@@ -150,14 +150,26 @@ public class LoginActivity extends AccountAuthenticatorActivity
 		webviewHelper.saveState(bundle);
 	}
 
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		// This allows sub classes to override the behavior by returning false.
-		if (fixBackButtonBehavior(keyCode)) {
-			return true;
-		}
-		return super.onKeyDown(keyCode, event);
-	}
+//	@Override
+//	public boolean onKeyDown(int keyCode, KeyEvent event) {
+////		finish();
+//		// This allows sub classes to override the behavior by returning false.
+////		if (fixBackButtonBehavior(keyCode)) {
+////			return true;
+////		}
+//
+////		PackageManager manager = getPackageManager();
+////		Intent i = manager.getLaunchIntentForPackage("com.euromonitor");
+////		if(i == null)
+////			moveTaskToBack(true);
+////
+////		i.addCategory(Intent.CATEGORY_LAUNCHER);
+////		startActivity(i);
+////		this.finish();
+////		return super.onKeyDown(keyCode, event);
+//		return moveTaskToBack(true);
+//	}
+
 
 	/**
 	 * A fix for back button behavior
@@ -225,7 +237,7 @@ public class LoginActivity extends AccountAuthenticatorActivity
 	@Override
 	public void loadingLoginPage(String loginUrl) {
 		final ActionBar ab = getActionBar();
-		ab.setTitle(loginUrl);
+		//ab.setTitle(loginUrl);
 	}
 
 	@Override

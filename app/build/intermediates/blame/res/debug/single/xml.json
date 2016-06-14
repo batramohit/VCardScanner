@@ -1,14 +1,14 @@
 [
     {
-        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\xml\\authenticator.xml",
-        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\xml\\authenticator.xml"
+        "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\xml\\app_restrictions.xml",
+        "source": "D:\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\xml\\app_restrictions.xml"
     },
     {
-        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\xml\\servers.xml",
-        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\xml\\servers.xml"
+        "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\xml\\authenticator.xml",
+        "source": "D:\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\xml\\authenticator.xml"
     },
     {
-        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\xml\\app_restrictions.xml",
-        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\xml\\app_restrictions.xml"
+        "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\xml\\servers.xml",
+        "source": "D:\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\xml\\servers.xml"
     }
 ]

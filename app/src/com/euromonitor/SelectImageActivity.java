@@ -1,18 +1,19 @@
 package com.euromonitor;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.TextView;
+
 import java.io.File;
 import java.io.IOException;
 
-public class SelectImageActivity extends ActionBarActivity
+public class SelectImageActivity extends Activity
 {
     private static final int REQUEST_TAKE_PHOTO = 0;
     private static final int REQUEST_SELECT_IMAGE_IN_ALBUM = 1;

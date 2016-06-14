@@ -1,14 +1,14 @@
 [
     {
-        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\menu\\sf__login.xml",
-        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\menu\\sf__login.xml"
+        "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_analyze.xml",
+        "source": "D:\\VCardScanner\\app\\res\\menu\\menu_analyze.xml"
     },
     {
-        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\menu\\sf__clear_custom_url.xml",
-        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\menu\\sf__clear_custom_url.xml"
+        "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\menu\\sf__login.xml",
+        "source": "D:\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\menu\\sf__login.xml"
     },
     {
-        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_analyze.xml",
-        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\app\\res\\menu\\menu_analyze.xml"
+        "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\menu\\sf__clear_custom_url.xml",
+        "source": "D:\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\menu\\sf__clear_custom_url.xml"
     }
 ]

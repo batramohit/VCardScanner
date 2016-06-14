@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="D:\SalesForceMobileSDK\VCardScanner\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="D:\VCardScanner\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.1"
-        sha1="59ff8b3573dc441cc93f1c89a358d05eb16f932c">
-        <dex dex="D:\SalesForceMobileSDK\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_d34c19e1af09aff6ad09d4c694011a4444120da7\classes.dex" />
+        sha1="8e381a41e7650178e826253056590fdb9cb0a1ca">
+        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b89e568a2d689635d38cb5857c2dc7098d07f9e5\classes.dex" />
     </item>
 
 </items>
