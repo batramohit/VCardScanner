@@ -4,12 +4,12 @@
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
-        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\sf__icon.png",
-        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-hdpi-v4\\sf__icon.png"
-    },
-    {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\sf__icon.png",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-hdpi-v4\\sf__icon.png"
     },
     {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",

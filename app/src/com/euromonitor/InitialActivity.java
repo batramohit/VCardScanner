@@ -81,4 +81,7 @@ public class InitialActivity extends SalesforceActivity {
         startActivity(intent);
     }
 
+    private void testMethod(){
+
+    }
 }

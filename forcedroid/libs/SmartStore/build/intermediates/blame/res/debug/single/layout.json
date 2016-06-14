@@ -12,12 +12,12 @@
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
-        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\debug\\layout\\sf__manage_space.xml",
-        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\layout\\sf__manage_space.xml"
-    },
-    {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\debug\\layout\\sf__manage_space.xml",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\layout\\sf__manage_space.xml"
     },
     {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\debug\\layout\\sf__fingerprint_dialog.xml",
