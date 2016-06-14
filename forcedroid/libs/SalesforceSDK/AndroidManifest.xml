@@ -24,7 +24,8 @@
         </service>
 
         <!-- Login activity -->
-        <activity android:name="com.salesforce.androidsdk.ui.LoginActivity"></activity>
+        <activity android:name="com.salesforce.androidsdk.ui.LoginActivity"
+            android:theme="@style/SalesforceSDK.ActionBarTheme"></activity>
 
         <!-- Passcode activity -->
         <activity android:name="com.salesforce.androidsdk.ui.PasscodeActivity"
