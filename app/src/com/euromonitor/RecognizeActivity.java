@@ -122,11 +122,19 @@ public class RecognizeActivity extends SalesforceActivity {
             return true;
         }
 
+        else if(id == R.id.action_accounts)
+        {
+            Intent intent = new Intent(this, AccountActivity.class);
+            startActivity(intent);
+        }
+
         else if(id == R.id.action_contacts)
         {
             Intent intent = new Intent(this, ContactActivity.class);
             startActivity(intent);
         }
+
+
 
         return super.onOptionsItemSelected(item);
     }
@@ -218,34 +226,32 @@ public class RecognizeActivity extends SalesforceActivity {
         contactFildes.put("MailingCity", "Bangalore");
         contactFildes.put("MailingPostalCode", "260052");
         contactFildes.put("Website__c", "www.euromonitor.com");
-        accountId = fetchAccountId(contactFildes, "ABC");
+        createContact(contactFildes, "ABC");
 
 //        Intent intent = new Intent(this, MainActivity.class);
 //        startActivity(intent);
     }
 
-    private String fetchAccountId(final HashMap<String,Object> contact, final String accountName) throws UnsupportedEncodingException {
-        final String[] acId = {null};
+    private void createContact(final HashMap<String,Object> contact, final String accountName) throws UnsupportedEncodingException {
         String soql = "SELECT Id,Name FROM Account WHERE Name = \'" + accountName + "\'";
         RestRequest restRequest = RestRequest.getRequestForQuery(getString(R.string.api_version), soql);
 
         restClient.sendAsync(restRequest, new RestClient.AsyncRequestCallback() {
             @Override
-            public String onSuccess(RestRequest request, RestResponse result) {
+            public void onSuccess(RestRequest request, RestResponse result) {
                 try {
                     JSONArray records = result.asJSONObject().getJSONArray("records");
                     if(records != null && records.length() > 0) {
-                        acId[0] = records.getJSONObject(0).getString("Id");
+                        String accountId = records.getJSONObject(0).getString("Id");
+                        contact.put("AccountId", accountId);
+                        createContact(contact);
                     }
                     else {
-                        acId[0] = createAccount(accountName);
+                        createAccount(contact, accountName);
                     }
-                    contact.put("AccountId", acId[0]);
-                    createContact(contact);
                 } catch (Exception e) {
                     onError(e);
                 }
-                return null;
             }
 
             @Override
@@ -257,24 +263,23 @@ public class RecognizeActivity extends SalesforceActivity {
 
 
         });
-
-        return acId[0];
     }
 
-    private String createAccount(String accountName) throws IOException{
+    private void createAccount(final HashMap<String, Object> contactField, String accountName) throws IOException{
         Map<String, Object> accountFields = new HashMap<String, Object>();
         accountFields.put("Name", accountName);
 
         RestRequest restRequest = RestRequest.getRequestForCreate(getString(R.string.api_version), "Account", accountFields);
         restClient.sendAsync(restRequest, new RestClient.AsyncRequestCallback() {
             @Override
-            public String onSuccess(RestRequest request, RestResponse result) {
+            public void onSuccess(RestRequest request, RestResponse result) {
                 try {
-                        return result.asJSONObject().getString("id");
+                    String accountId = result.asJSONObject().getString("id");
+                    contactField.put("AccountId", accountId);
+                    createContact(contactField);
                 } catch (Exception e) {
                     onError(e);
                 }
-                return null;
             }
 
             @Override
@@ -284,21 +289,20 @@ public class RecognizeActivity extends SalesforceActivity {
                         Toast.LENGTH_LONG).show();
             }
         });
-
-        return null;
     }
 
     private void createContact(HashMap<String, Object> contactField) throws IOException{
         RestRequest restRequest = RestRequest.getRequestForCreate(getString(R.string.api_version), "Contact", contactField);
         restClient.sendAsync(restRequest, new RestClient.AsyncRequestCallback() {
             @Override
-            public String onSuccess(RestRequest request, RestResponse result) {
+            public void onSuccess(RestRequest request, RestResponse result) {
                 try {
-
+                        Toast.makeText(RecognizeActivity.this,
+                            "Contact Created Successfully",
+                            Toast.LENGTH_LONG).show();
                 } catch (Exception e) {
                     onError(e);
                 }
-                return null;
             }
 
             @Override

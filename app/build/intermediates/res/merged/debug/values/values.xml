@@ -267,6 +267,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="account_type">com.euromonitor.login</string>
+    <string name="accounts_button">Accounts</string>
     <string name="action_settings">Settings</string>
     <string name="add_subscription_key_tip">Please put your subscription key to source file \"app/res/values/strings.xml\" to enable Vision API calls.</string>
     <string name="add_subscription_key_tip_title">Subscription Key is Needed</string>
@@ -277,6 +278,7 @@
     <string name="clear_button">Clear</string>
     <string name="contacts_button">Contacts</string>
     <string name="fetch_accounts_button">Fetch Accounts</string>
+    <string name="image_scan_button">Scan Image</string>
     <string name="logout_button">Logout</string>
     <string name="oauthRedirectURI">testsfdc:///mobilesdk/detect/oauth/done</string>
     <string name="oauth_display_type">touch</string>

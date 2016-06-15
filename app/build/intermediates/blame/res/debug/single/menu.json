@@ -4,6 +4,14 @@
         "source": "D:\\VCardScanner\\app\\res\\menu\\menu_analyze.xml"
     },
     {
+        "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\menu\\account_menu_scrolling.xml",
+        "source": "D:\\VCardScanner\\app\\res\\menu\\account_menu_scrolling.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\menu\\contact_menu_scrolling.xml",
+        "source": "D:\\VCardScanner\\app\\res\\menu\\contact_menu_scrolling.xml"
+    },
+    {
         "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_scrolling.xml",
         "source": "D:\\VCardScanner\\app\\res\\menu\\menu_scrolling.xml"
     },
