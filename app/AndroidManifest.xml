@@ -12,7 +12,7 @@
         android:manageSpaceActivity="com.salesforce.androidsdk.ui.ManageSpaceActivity">
 
         <!-- Launcher screen -->
-        <activity android:name=".InitialActivity"
+        <activity android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/SalesforceSDK.ActionBarTheme">
             <intent-filter>
@@ -24,14 +24,13 @@
         <activity
             android:name=".RecognizeActivity"
             android:theme="@style/SalesforceSDK.ActionBarTheme"
-            android:parentActivityName=".InitialActivity" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".InitialActivity" />
+                android:value=".MainActivity" />
         </activity>
 
-        <activity android:name=".MainActivity"
-            android:parentActivityName=".RecognizeActivity"
+        <activity android:name=".ContactActivity"
             android:label="@string/app_name"
             android:theme="@style/SalesforceSDK.ActionBarTheme">
         </activity>

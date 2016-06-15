@@ -42,7 +42,7 @@
 
         <!-- Launcher screen -->
         <activity
-            android:name="com.euromonitor.InitialActivity"
+            android:name="com.euromonitor.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/SalesforceSDK.ActionBarTheme" >
             <intent-filter>
@@ -53,16 +53,15 @@
         </activity>
         <activity
             android:name="com.euromonitor.RecognizeActivity"
-            android:parentActivityName="com.euromonitor.InitialActivity"
+            android:parentActivityName="com.euromonitor.MainActivity"
             android:theme="@style/SalesforceSDK.ActionBarTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".InitialActivity" />
+                android:value=".MainActivity" />
         </activity>
         <activity
-            android:name="com.euromonitor.MainActivity"
+            android:name="com.euromonitor.ContactActivity"
             android:label="@string/app_name"
-            android:parentActivityName="com.euromonitor.RecognizeActivity"
             android:theme="@style/SalesforceSDK.ActionBarTheme" >
         </activity>
         <activity

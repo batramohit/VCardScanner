@@ -47,14 +47,14 @@
         jar="D:\VCardScanner\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="23.0.1"
-        sha1="7f1813a5804682c27067498ae926ecec2e9a045b">
+        sha1="9c2b0eb95f4f4ffa60fdd7c1a9175916e286148c">
         <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_58a9cce3e107fb6c4b482b57c807f30e84bb831a\classes.dex" />
     </item>
     <item
         jar="D:\VCardScanner\app\build\intermediates\exploded-aar\VCardScanner.forcedroid.libs\SmartStore\unspecified\jars\libs\sqlcipher.jar"
         jumboMode="true"
         revision="23.0.1"
-        sha1="6265bb277a0a2838dae4a4bffdaa103511f0b530">
+        sha1="9fb3afa45bea55eb4e1fa1a8035e25d7f56923a5">
         <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\8\sqlcipher_498ae19c2d89da0b9ee722d6e1a6f1fa740d80da\classes.dex" />
     </item>
     <item
@@ -75,7 +75,7 @@
         jar="D:\VCardScanner\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.1"
-        sha1="c61f87cbb3de20074585a3c07b92254f790732d0">
+        sha1="29adb99ec21f017f5e3346d43252bead550fd386">
         <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b89e568a2d689635d38cb5857c2dc7098d07f9e5\classes.dex" />
     </item>
     <item

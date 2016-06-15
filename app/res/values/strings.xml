@@ -5,7 +5,7 @@
 	<string name="app_package">com.euromonitor</string>
     <string name="welcome">Welcome %s</string>
 	<string name="logout_button">Logout</string>
-	<string name="fetch_contacts_button">Fetch Contacts</string>
+	<string name="contacts_button">Contacts</string>
 	<string name="fetch_accounts_button">Fetch Accounts</string>
 	<string name="clear_button">Clear</string>
 	<string name="subscription_key">e2e4be4efa234fd6b4ad703d83b0c824</string>
