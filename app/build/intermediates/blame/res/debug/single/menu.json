@@ -4,6 +4,10 @@
         "source": "D:\\VCardScanner\\app\\res\\menu\\menu_analyze.xml"
     },
     {
+        "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_scrolling.xml",
+        "source": "D:\\VCardScanner\\app\\res\\menu\\menu_scrolling.xml"
+    },
+    {
         "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\menu\\sf__login.xml",
         "source": "D:\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\menu\\sf__login.xml"
     },

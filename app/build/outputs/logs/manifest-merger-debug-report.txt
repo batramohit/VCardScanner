@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\VCardScanner\app\AndroidManifest.xml:3:1-58:12
+ADDED from D:\VCardScanner\app\AndroidManifest.xml:3:1-57:12
 	package
 		ADDED from D:\VCardScanner\app\AndroidManifest.xml:4:5-30
 	android:versionName
@@ -16,7 +16,7 @@ ADDED from D:\VCardScanner\app\AndroidManifest.xml:3:1-58:12
 	android:installLocation
 		ADDED from D:\VCardScanner\app\AndroidManifest.xml:7:5-43
 application
-ADDED from D:\VCardScanner\app\AndroidManifest.xml:9:5-44:19
+ADDED from D:\VCardScanner\app\AndroidManifest.xml:9:5-43:19
 MERGED from [VCardScanner.forcedroid.libs:SmartSync:unspecified] D:\VCardScanner\app\build\intermediates\exploded-aar\VCardScanner.forcedroid.libs\SmartSync\unspecified\AndroidManifest.xml:11:5-20
 MERGED from [VCardScanner.forcedroid.libs:SmartStore:unspecified] D:\VCardScanner\app\build\intermediates\exploded-aar\VCardScanner.forcedroid.libs\SmartStore\unspecified\AndroidManifest.xml:11:5-15:19
 MERGED from [VCardScanner.forcedroid.libs:SalesforceSDK:unspecified] D:\VCardScanner\app\build\intermediates\exploded-aar\VCardScanner.forcedroid.libs\SalesforceSDK\unspecified\AndroidManifest.xml:23:5-103:19
@@ -56,14 +56,14 @@ MERGED from [com.android.support:support-v4:23.2.1] D:\VCardScanner\app\build\in
 		ADDED from D:\VCardScanner\app\AndroidManifest.xml:9:18-57
 	android:name
 		ADDED from D:\VCardScanner\app\AndroidManifest.xml:11:9-31
-activity#com.euromonitor.InitialActivity
+activity#com.euromonitor.MainActivity
 ADDED from D:\VCardScanner\app\AndroidManifest.xml:15:9-22:20
 	android:label
 		ADDED from D:\VCardScanner\app\AndroidManifest.xml:16:13-45
 	android:theme
 		ADDED from D:\VCardScanner\app\AndroidManifest.xml:17:13-64
 	android:name
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:15:19-50
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:15:19-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from D:\VCardScanner\app\AndroidManifest.xml:18:13-21:29
 action#android.intent.action.MAIN
@@ -77,39 +77,37 @@ ADDED from D:\VCardScanner\app\AndroidManifest.xml:20:17-77
 activity#com.euromonitor.RecognizeActivity
 ADDED from D:\VCardScanner\app\AndroidManifest.xml:24:9-31:20
 	android:parentActivityName
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:27:13-58
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:27:13-55
 	android:theme
 		ADDED from D:\VCardScanner\app\AndroidManifest.xml:26:13-64
 	android:name
 		ADDED from D:\VCardScanner\app\AndroidManifest.xml:25:13-46
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from D:\VCardScanner\app\AndroidManifest.xml:28:13-30:52
+ADDED from D:\VCardScanner\app\AndroidManifest.xml:28:13-30:49
 	android:value
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:30:17-49
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:30:17-46
 	android:name
 		ADDED from D:\VCardScanner\app\AndroidManifest.xml:29:17-63
-activity#com.euromonitor.MainActivity
-ADDED from D:\VCardScanner\app\AndroidManifest.xml:33:9-37:20
+activity#com.euromonitor.ContactActivity
+ADDED from D:\VCardScanner\app\AndroidManifest.xml:33:9-36:20
 	android:label
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:35:13-45
-	android:parentActivityName
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:34:13-60
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:34:13-45
 	android:theme
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:36:13-64
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:35:13-64
 	android:name
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:33:19-47
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:33:19-50
 activity#com.euromonitor.SelectImageActivity
-ADDED from D:\VCardScanner\app\AndroidManifest.xml:39:9-43:52
+ADDED from D:\VCardScanner\app\AndroidManifest.xml:38:9-42:52
 	android:screenOrientation
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:43:13-49
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:42:13-49
 	android:label
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:41:13-52
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:40:13-52
 	android:theme
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:42:13-64
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:41:13-64
 	android:name
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:40:13-48
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:39:13-48
 uses-sdk
-ADDED from D:\VCardScanner\app\AndroidManifest.xml:46:5-47:41
+ADDED from D:\VCardScanner\app\AndroidManifest.xml:45:5-46:41
 MERGED from [VCardScanner.forcedroid.libs:SmartSync:unspecified] D:\VCardScanner\app\build\intermediates\exploded-aar\VCardScanner.forcedroid.libs\SmartSync\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [VCardScanner.forcedroid.libs:SmartStore:unspecified] D:\VCardScanner\app\build\intermediates\exploded-aar\VCardScanner.forcedroid.libs\SmartStore\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [VCardScanner.forcedroid.libs:SalesforceSDK:unspecified] D:\VCardScanner\app\build\intermediates\exploded-aar\VCardScanner.forcedroid.libs\SalesforceSDK\unspecified\AndroidManifest.xml:7:5-9:41
@@ -145,19 +143,19 @@ MERGED from [com.microsoft.projectoxford:vision:1.0.354] D:\VCardScanner\app\bui
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:23.2.1] D:\VCardScanner\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:47:9-38
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:46:9-38
 	android:minSdkVersion
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:46:15-41
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:45:15-41
 permission#com.euromonitor.C2D_MESSAGE
-ADDED from D:\VCardScanner\app\AndroidManifest.xml:54:5-55:47
+ADDED from D:\VCardScanner\app\AndroidManifest.xml:53:5-54:47
 	android:protectionLevel
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:55:9-44
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:54:9-44
 	android:name
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:54:17-59
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:53:17-59
 uses-permission#com.euromonitor.C2D_MESSAGE
-ADDED from D:\VCardScanner\app\AndroidManifest.xml:57:5-67
+ADDED from D:\VCardScanner\app\AndroidManifest.xml:56:5-67
 	android:name
-		ADDED from D:\VCardScanner\app\AndroidManifest.xml:57:22-64
+		ADDED from D:\VCardScanner\app\AndroidManifest.xml:56:22-64
 activity#com.salesforce.androidsdk.smartstore.ui.SmartStoreInspectorActivity
 ADDED from [VCardScanner.forcedroid.libs:SmartStore:unspecified] D:\VCardScanner\app\build\intermediates\exploded-aar\VCardScanner.forcedroid.libs\SmartStore\unspecified\AndroidManifest.xml:14:9-104
 	android:name

@@ -559,7 +559,7 @@ public final class R {
 		public static final int icon = 0x7f0e0029;
 		public static final int ifRoom = 0x7f0e001e;
 		public static final int image = 0x7f0e0026;
-		public static final int info = 0x7f0e0057;
+		public static final int info = 0x7f0e0059;
 		public static final int line1 = 0x7f0e0067;
 		public static final int line3 = 0x7f0e006b;
 		public static final int listMode = 0x7f0e0009;
@@ -599,10 +599,10 @@ public final class R {
 		public static final int sf__fingerprint_icon = 0x7f0e0078;
 		public static final int sf__fingerprint_status = 0x7f0e0079;
 		public static final int sf__layout_root = 0x7f0e0071;
-		public static final int sf__menu_clear_cookies = 0x7f0e0091;
-		public static final int sf__menu_clear_custom_url = 0x7f0e008f;
-		public static final int sf__menu_pick_server = 0x7f0e0090;
-		public static final int sf__menu_reload = 0x7f0e0092;
+		public static final int sf__menu_clear_cookies = 0x7f0e0093;
+		public static final int sf__menu_clear_custom_url = 0x7f0e0091;
+		public static final int sf__menu_pick_server = 0x7f0e0092;
+		public static final int sf__menu_reload = 0x7f0e0094;
 		public static final int sf__oauth_webview = 0x7f0e0085;
 		public static final int sf__passcode_error = 0x7f0e008a;
 		public static final int sf__passcode_forgot = 0x7f0e0089;
@@ -672,30 +672,30 @@ public final class R {
 		public static final int abc_search_dropdown_item_icons_2line = 0x7f040016;
 		public static final int abc_search_view = 0x7f040017;
 		public static final int abc_select_dialog_material = 0x7f040018;
-		public static final int notification_media_action = 0x7f04001f;
-		public static final int notification_media_cancel_action = 0x7f040020;
-		public static final int notification_template_big_media = 0x7f040021;
-		public static final int notification_template_big_media_narrow = 0x7f040022;
-		public static final int notification_template_lines = 0x7f040023;
-		public static final int notification_template_media = 0x7f040024;
-		public static final int notification_template_part_chronometer = 0x7f040025;
-		public static final int notification_template_part_time = 0x7f040026;
-		public static final int select_dialog_item_material = 0x7f040027;
-		public static final int select_dialog_multichoice_material = 0x7f040028;
-		public static final int select_dialog_singlechoice_material = 0x7f040029;
-		public static final int sf__account_switcher = 0x7f04002a;
-		public static final int sf__custom_server_url = 0x7f04002b;
-		public static final int sf__fingerprint_dialog = 0x7f04002c;
-		public static final int sf__login = 0x7f04002f;
-		public static final int sf__manage_space = 0x7f040030;
-		public static final int sf__passcode = 0x7f040031;
-		public static final int sf__server_picker = 0x7f040032;
-		public static final int sf__server_picker_list = 0x7f040033;
-		public static final int support_simple_spinner_dropdown_item = 0x7f040034;
+		public static final int notification_media_action = 0x7f040020;
+		public static final int notification_media_cancel_action = 0x7f040021;
+		public static final int notification_template_big_media = 0x7f040022;
+		public static final int notification_template_big_media_narrow = 0x7f040023;
+		public static final int notification_template_lines = 0x7f040024;
+		public static final int notification_template_media = 0x7f040025;
+		public static final int notification_template_part_chronometer = 0x7f040026;
+		public static final int notification_template_part_time = 0x7f040027;
+		public static final int select_dialog_item_material = 0x7f040028;
+		public static final int select_dialog_multichoice_material = 0x7f040029;
+		public static final int select_dialog_singlechoice_material = 0x7f04002a;
+		public static final int sf__account_switcher = 0x7f04002b;
+		public static final int sf__custom_server_url = 0x7f04002c;
+		public static final int sf__fingerprint_dialog = 0x7f04002d;
+		public static final int sf__login = 0x7f040030;
+		public static final int sf__manage_space = 0x7f040031;
+		public static final int sf__passcode = 0x7f040032;
+		public static final int sf__server_picker = 0x7f040033;
+		public static final int sf__server_picker_list = 0x7f040034;
+		public static final int support_simple_spinner_dropdown_item = 0x7f040035;
 	}
 	public static final class menu {
-		public static final int sf__clear_custom_url = 0x7f0f0001;
-		public static final int sf__login = 0x7f0f0002;
+		public static final int sf__clear_custom_url = 0x7f0f0002;
+		public static final int sf__login = 0x7f0f0003;
 	}
 	public static final class string {
 		public static final int abc_action_bar_home_description = 0x7f070000;

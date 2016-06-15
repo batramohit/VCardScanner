@@ -108,10 +108,6 @@
         "source": "D:\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_lines.xml"
     },
     {
-        "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\layout\\initial_layout.xml",
-        "source": "D:\\VCardScanner\\app\\res\\layout\\initial_layout.xml"
-    },
-    {
         "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
         "source": "D:\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_activity_chooser_view.xml"
     },
@@ -122,6 +118,10 @@
     {
         "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
         "source": "D:\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_contacts.xml",
+        "source": "D:\\VCardScanner\\app\\res\\layout\\activity_contacts.xml"
     },
     {
         "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
@@ -170,6 +170,10 @@
     {
         "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\layout\\sf__account_switcher.xml",
         "source": "D:\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\layout\\sf__account_switcher.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_initial.xml",
+        "source": "D:\\VCardScanner\\app\\res\\layout\\activity_initial.xml"
     },
     {
         "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",

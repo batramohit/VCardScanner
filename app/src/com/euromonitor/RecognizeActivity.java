@@ -1,6 +1,5 @@
 package com.euromonitor;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -19,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.microsoft.projectoxford.vision.VisionServiceClient;
@@ -29,13 +29,26 @@ import com.microsoft.projectoxford.vision.contract.OCR;
 import com.microsoft.projectoxford.vision.contract.Region;
 import com.microsoft.projectoxford.vision.contract.Word;
 import com.microsoft.projectoxford.vision.rest.VisionServiceException;
+import com.salesforce.androidsdk.app.SalesforceSDKManager;
+import com.salesforce.androidsdk.rest.RestClient;
+import com.salesforce.androidsdk.rest.RestRequest;
+import com.salesforce.androidsdk.rest.RestResponse;
+import com.salesforce.androidsdk.ui.SalesforceActivity;
+
+import org.json.JSONArray;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public class RecognizeActivity extends Activity {
+public class RecognizeActivity extends SalesforceActivity {
+
+    private RestClient restClient;
+    private String accountId;
 
     // Flag to indicate which task is to be performed.
     private static final int REQUEST_SELECT_IMAGE = 0;
@@ -58,6 +71,11 @@ public class RecognizeActivity extends Activity {
     private VisionServiceClient client;
 
     @Override
+    public void onResume(RestClient client) {
+        this.restClient = client;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recognize);
@@ -75,23 +93,38 @@ public class RecognizeActivity extends Activity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_scrolling, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings)
-        {
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_logout) {
+            onLogoutClick();
             return true;
+        }
+
+        else if(id == R.id.action_contacts)
+        {
+            Intent intent = new Intent(this, ContactActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void onLogoutClick() {
+        SalesforceSDKManager.getInstance().logout(this);
+    }
+
 
     // Called when the "Select Image" button is clicked.
     public void selectImage(View view)
@@ -160,10 +193,111 @@ public class RecognizeActivity extends Activity {
         return result;
     }
 
-    public void uploadContact(View v)
-    {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+    public void uploadContact(View v) throws IOException {
+        HashMap<String, Object> contactFildes = new HashMap<String, Object>();
+
+        contactFildes.put("LastName", "Batra");
+        contactFildes.put("FirstName", "Mohit");
+        contactFildes.put("Title", "SE");
+        contactFildes.put("Phone", "8050624933");
+        contactFildes.put("MobilePhone", "8050624933");
+        contactFildes.put("Fax", "8050624933");
+        contactFildes.put("Email", "mohit.batra@euromonitor.com");
+        contactFildes.put("MailingCountry", "India");
+        contactFildes.put("MailingStreet", "Raj Kumar Road");
+        contactFildes.put("MailingCity", "Bangalore");
+        contactFildes.put("MailingPostalCode", "260052");
+        contactFildes.put("Website__c", "www.euromonitor.com");
+        accountId = fetchAccountId(contactFildes, "ABC");
+
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+    }
+
+    private String fetchAccountId(final HashMap<String,Object> contact, final String accountName) throws UnsupportedEncodingException {
+        final String[] acId = {null};
+        String soql = "SELECT Id,Name FROM Account WHERE Name = \'" + accountName + "\'";
+        RestRequest restRequest = RestRequest.getRequestForQuery(getString(R.string.api_version), soql);
+
+        restClient.sendAsync(restRequest, new RestClient.AsyncRequestCallback() {
+            @Override
+            public String onSuccess(RestRequest request, RestResponse result) {
+                try {
+                    JSONArray records = result.asJSONObject().getJSONArray("records");
+                    if(records != null && records.length() > 0) {
+                        acId[0] = records.getJSONObject(0).getString("Id");
+                    }
+                    else {
+                        acId[0] = createAccount(accountName);
+                    }
+                    contact.put("AccountId", acId[0]);
+                    createContact(contact);
+                } catch (Exception e) {
+                    onError(e);
+                }
+                return null;
+            }
+
+            @Override
+            public void onError(Exception exception) {
+                Toast.makeText(RecognizeActivity.this,
+                        RecognizeActivity.this.getString(SalesforceSDKManager.getInstance().getSalesforceR().stringGenericError(), exception.toString()),
+                        Toast.LENGTH_LONG).show();
+            }
+
+
+        });
+
+        return acId[0];
+    }
+
+    private String createAccount(String accountName) throws IOException{
+        Map<String, Object> accountFields = new HashMap<String, Object>();
+        accountFields.put("Name", accountName);
+
+        RestRequest restRequest = RestRequest.getRequestForCreate(getString(R.string.api_version), "Account", accountFields);
+        restClient.sendAsync(restRequest, new RestClient.AsyncRequestCallback() {
+            @Override
+            public String onSuccess(RestRequest request, RestResponse result) {
+                try {
+                        return result.asJSONObject().getString("id");
+                } catch (Exception e) {
+                    onError(e);
+                }
+                return null;
+            }
+
+            @Override
+            public void onError(Exception exception) {
+                Toast.makeText(RecognizeActivity.this,
+                        RecognizeActivity.this.getString(SalesforceSDKManager.getInstance().getSalesforceR().stringGenericError(), exception.toString()),
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+
+        return null;
+    }
+
+    private void createContact(HashMap<String, Object> contactField) throws IOException{
+        RestRequest restRequest = RestRequest.getRequestForCreate(getString(R.string.api_version), "Contact", contactField);
+        restClient.sendAsync(restRequest, new RestClient.AsyncRequestCallback() {
+            @Override
+            public String onSuccess(RestRequest request, RestResponse result) {
+                try {
+
+                } catch (Exception e) {
+                    onError(e);
+                }
+                return null;
+            }
+
+            @Override
+            public void onError(Exception exception) {
+                Toast.makeText(RecognizeActivity.this,
+                        RecognizeActivity.this.getString(SalesforceSDKManager.getInstance().getSalesforceR().stringGenericError(), exception.toString()),
+                        Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
 

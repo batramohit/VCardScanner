@@ -1,0 +1,7 @@
+CHANGED,D:\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\1\5\main\com\euromonitor\RecognizeActivity$2.class
+CHANGED,D:\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\1\5\main\com\euromonitor\RecognizeActivity$doRequest$1.class
+CHANGED,D:\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\1\5\main\com\euromonitor\RecognizeActivity$1.class
+CHANGED,D:\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\1\5\main\com\euromonitor\RecognizeActivity$NameAdapter.class
+CHANGED,D:\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\1\5\main\com\euromonitor\RecognizeActivity$3.class
+CHANGED,D:\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\1\5\main\com\euromonitor\RecognizeActivity.class
+CHANGED,D:\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\1\5\main\com\euromonitor\RecognizeActivity$doRequest.class

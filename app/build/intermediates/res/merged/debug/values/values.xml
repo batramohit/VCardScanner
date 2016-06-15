@@ -275,8 +275,8 @@
     <string name="app_name"><b>VCard Scanner</b></string>
     <string name="app_package">com.euromonitor</string>
     <string name="clear_button">Clear</string>
+    <string name="contacts_button">Contacts</string>
     <string name="fetch_accounts_button">Fetch Accounts</string>
-    <string name="fetch_contacts_button">Fetch Contacts</string>
     <string name="logout_button">Logout</string>
     <string name="oauthRedirectURI">testsfdc:///mobilesdk/detect/oauth/done</string>
     <string name="oauth_display_type">touch</string>
