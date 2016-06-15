@@ -1,43 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="armeabi-v7a,armeabi"
+    abi="x86_64,x86"
     api-level="23"
-    density="xxhdpi"
+    density="560dpi"
     format="7"
-<<<<<<< HEAD
-    timestamp="10592727531963"
+    timestamp="50694347799299"
     token="-6162135721786692860" >
-=======
-    timestamp="7088487580064"
-    token="4444375372650319480" >
->>>>>>> 6cac42f211bda958b09aca4454322989a91775cf
 
     <task
         name="javac"
-        duration="233" />
+        duration="424" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="616" />
+        duration="449" />
     <task
         name="verifier"
-        duration="208" />
+        duration="176" />
 
     <artifact
         location="D:\VCardScanner\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
-<<<<<<< HEAD
-    <build timestamp="10592727531963" >
-=======
-    <artifact
-        location="D:\VCardScanner\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
-
-    <build timestamp="7088487580064" >
->>>>>>> 6cac42f211bda958b09aca4454322989a91775cf
+    <build timestamp="50694347799299" >
         <artifact
             location="D:\VCardScanner\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />

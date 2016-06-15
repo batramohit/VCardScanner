@@ -2,7 +2,6 @@
 <items version="2" >
 
     <item
-<<<<<<< HEAD
         jar="D:\VCardScanner\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\jars\classes.jar"
         jumboMode="true"
         revision="23.0.1"
@@ -48,14 +47,14 @@
         jar="D:\VCardScanner\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="23.0.1"
-        sha1="1f4510bceb2ed55902e6198698519632d9bfd303">
+        sha1="7f1813a5804682c27067498ae926ecec2e9a045b">
         <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_58a9cce3e107fb6c4b482b57c807f30e84bb831a\classes.dex" />
     </item>
     <item
         jar="D:\VCardScanner\app\build\intermediates\exploded-aar\VCardScanner.forcedroid.libs\SmartStore\unspecified\jars\libs\sqlcipher.jar"
         jumboMode="true"
         revision="23.0.1"
-        sha1="3ab17257c2e28ceba16a9b3018cecabece15af7c">
+        sha1="6265bb277a0a2838dae4a4bffdaa103511f0b530">
         <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\8\sqlcipher_498ae19c2d89da0b9ee722d6e1a6f1fa740d80da\classes.dex" />
     </item>
     <item
@@ -76,7 +75,7 @@
         jar="D:\VCardScanner\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.1"
-        sha1="0f9d23efded2083eee654e77b2f161757fc84217">
+        sha1="c61f87cbb3de20074585a3c07b92254f790732d0">
         <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b89e568a2d689635d38cb5857c2dc7098d07f9e5\classes.dex" />
     </item>
     <item
@@ -107,13 +106,5 @@
         sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
         <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.2.1_5f17f2dadd7da35664e781b14be9c97f653919b3\classes.dex" />
     </item>
-=======
-        jar="D:\VCardScanner\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="23.0.1"
-        sha1="d71d9e6c18b6c2492a93537d1f67bc31100d816b">
-        <dex dex="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b89e568a2d689635d38cb5857c2dc7098d07f9e5\classes.dex" />
-    </item>
->>>>>>> 6cac42f211bda958b09aca4454322989a91775cf
 
 </items>

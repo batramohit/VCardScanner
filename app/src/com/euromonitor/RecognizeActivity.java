@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,9 +56,12 @@ public class RecognizeActivity extends Activity {
     private EditText mEditEmailText;
     private EditText mEditNameText;
     private Spinner mSpinner;
+    private Spinner lSpinner;
     private EditText mEditAddressText;
     private VisionServiceClient client;
-
+    private AutoCompleteTextView mailingAddress;
+    ArrayList<String> item=new ArrayList<>();
+    ArrayAdapter<String> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +74,12 @@ public class RecognizeActivity extends Activity {
         mButtonSelectImage = (Button) findViewById(R.id.buttonSelectImage);
         mEditText = (EditText) findViewById(R.id.editTextResult);
         mEditEmailText = (EditText) findViewById(R.id.editTextEmailResult);
-        mEditAddressText=(EditText) findViewById(R.id.editTextAddressResult);
+        mailingAddress=(AutoCompleteTextView)findViewById(R.id.mailingAddress); Country country=new Country();
+        item =country.getAllCountryName();
+        adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,item);
+        mailingAddress.setAdapter(adapter);
+       mailingAddress.setThreshold(1);
+      //  mEditAddressText=(EditText) findViewById(R.id.editTextAddressResult);
         //  mEditNameText = (EditText) findViewById(R.id.editTextNameResult);
 
     }
@@ -198,6 +208,7 @@ public class RecognizeActivity extends Activity {
             }
             else
             {
+
                 ArrayList<String> name =new ArrayList<String>();
                 Gson gson = new Gson();
                 OCR r = gson.fromJson(data, OCR.class);
@@ -217,10 +228,11 @@ public class RecognizeActivity extends Activity {
                 String thirdMobilePattern="\"\\\\d{3}-\\\\d{3}-\\\\d{4}\\\\s(x|(ext))\\\\d{3,5}\"";
                 //Validate phone number where area code is in braces
                 String fourthMobilePattern="\"\\\\(\\\\d{3}\\\\)-\\\\d{3}-\\\\d{4}\"";
-                String pattern1 = "^\\+(?:[0-9] ?){6,14}[0-9]$";
+                String pattern1 = "^[\\p{L} .'-]+$";
                 String emailPattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                         + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
                 String namePattern= "[A-Z][a-z]+( [A-Z][a-z]+)";
+
                 String result = "";
                 String result1 = "";
                 String result2 = "";
@@ -240,37 +252,35 @@ public class RecognizeActivity extends Activity {
                             {
                                 result1 = word.text + " ";
                             }
-                            if (!word.text.contains(result)&&!word.text.contains(result1))
+                            if (word.text.matches(pattern1))
                             {
-                                result2 +=word.text + " ";
+                                result2 =word.text + " ";
                             }
-                            if(word.text.matches(formatting))
-                            {
-                                result3 +=word.text;
-                            }
-                            //name.add(result2);
+                            name.add(result2);
+
+
                         }
                         result += "";
                         result1 += "";
                         result3 +="";
-                        name.add(result2);
+
                     }
                     result += "";
                     result1 += "";
                     result3 +="";
-                    //name.add(result2);
+
                 }
 
                 mEditText.setText(result);
                 mEditEmailText.setText(result1);
-                mEditAddressText.setText(result3);
-                //   mEditNameText.setText(result2);
+             //   mEditAddressText.setText(result3);
                 mSpinner = (Spinner) findViewById(R.id.name);
                 RecognizeActivity.NameAdapter nameAdapter = new RecognizeActivity.NameAdapter(name);
                 mSpinner.setAdapter(nameAdapter);
                 mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+                    {
 
                     }
 
@@ -279,6 +289,14 @@ public class RecognizeActivity extends Activity {
 
                     }
                 });
+
+                lSpinner=(Spinner)findViewById(R.id.lastname);
+                lSpinner.setAdapter(nameAdapter);
+
+
+
+
+
             }
             mButtonSelectImage.setEnabled(true);
         }
