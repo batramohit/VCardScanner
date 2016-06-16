@@ -32,6 +32,7 @@ import com.microsoft.projectoxford.vision.contract.Region;
 import com.microsoft.projectoxford.vision.contract.Word;
 import com.microsoft.projectoxford.vision.rest.VisionServiceException;
 import com.salesforce.androidsdk.app.SalesforceSDKManager;
+import com.salesforce.androidsdk.auth.HttpAccess;
 import com.salesforce.androidsdk.rest.RestClient;
 import com.salesforce.androidsdk.rest.RestRequest;
 import com.salesforce.androidsdk.rest.RestResponse;
@@ -73,7 +74,9 @@ public class RecognizeActivity extends SalesforceActivity {
     private EditText mEditAddressText;
     private VisionServiceClient client;
     private AutoCompleteTextView mailingAddress;
+    private Spinner jobSpinner;
     ArrayList<String> item=new ArrayList<>();
+    ArrayList<String> allValues=new ArrayList<>();
     ArrayAdapter<String> adapter;
     @Override
     public void onResume(RestClient client) {
@@ -205,47 +208,47 @@ public class RecognizeActivity extends SalesforceActivity {
 
     public void uploadContact(View v) throws IOException {
         HashMap<String, Object> contactFildes = new HashMap<String, Object>();
-
-        contactFildes.put("LastName", "Batra");
-        contactFildes.put("FirstName", "Mohit");
+        String email = ((EditText)findViewById(R.id.editTextEmailResult)).getText().toString();
+        String lastname=lSpinner.getSelectedItem().toString();
+        String name=mSpinner.getSelectedItem().toString();
+        contactFildes.put("LastName", lastname);
+        contactFildes.put("FirstName", name);
         contactFildes.put("Title", "SE");
         contactFildes.put("Phone", "8050624933");
         contactFildes.put("MobilePhone", "8050624933");
         contactFildes.put("Fax", "8050624933");
-        contactFildes.put("Email", "mohit.batra@euromonitor.com");
+        contactFildes.put("Email", email);
         contactFildes.put("MailingCountry", "India");
         contactFildes.put("MailingStreet", "Raj Kumar Road");
         contactFildes.put("MailingCity", "Bangalore");
         contactFildes.put("MailingPostalCode", "260052");
         contactFildes.put("Website__c", "www.euromonitor.com");
-        accountId = fetchAccountId(contactFildes, "ABC");
+        createContact(contactFildes, "ABC");
 
 //        Intent intent = new Intent(this, MainActivity.class);
 //        startActivity(intent);
     }
 
-    private String fetchAccountId(final HashMap<String,Object> contact, final String accountName) throws UnsupportedEncodingException {
-        final String[] acId = {null};
+    private void createContact(final HashMap<String,Object> contact, final String accountName) throws UnsupportedEncodingException {
         String soql = "SELECT Id,Name FROM Account WHERE Name = \'" + accountName + "\'";
         RestRequest restRequest = RestRequest.getRequestForQuery(getString(R.string.api_version), soql);
 
         restClient.sendAsync(restRequest, new RestClient.AsyncRequestCallback() {
             @Override
-            public String onSuccess(RestRequest request, RestResponse result) {
+            public void onSuccess(RestRequest request, RestResponse result) {
                 try {
                     JSONArray records = result.asJSONObject().getJSONArray("records");
                     if(records != null && records.length() > 0) {
-                        acId[0] = records.getJSONObject(0).getString("Id");
+                        String accountId = records.getJSONObject(0).getString("Id");
+                        contact.put("AccountId", accountId);
+                        createContact(contact);
                     }
                     else {
-                        acId[0] = createAccount(accountName);
+                        createAccount(contact, accountName);
                     }
-                    contact.put("AccountId", acId[0]);
-                    createContact(contact);
                 } catch (Exception e) {
                     onError(e);
                 }
-                return null;
             }
 
             @Override
@@ -257,24 +260,23 @@ public class RecognizeActivity extends SalesforceActivity {
 
 
         });
-
-        return acId[0];
     }
 
-    private String createAccount(String accountName) throws IOException{
+    private void createAccount(final HashMap<String, Object> contactField, String accountName) throws IOException{
         Map<String, Object> accountFields = new HashMap<String, Object>();
         accountFields.put("Name", accountName);
 
         RestRequest restRequest = RestRequest.getRequestForCreate(getString(R.string.api_version), "Account", accountFields);
         restClient.sendAsync(restRequest, new RestClient.AsyncRequestCallback() {
             @Override
-            public String onSuccess(RestRequest request, RestResponse result) {
+            public void onSuccess(RestRequest request, RestResponse result) {
                 try {
-                        return result.asJSONObject().getString("id");
+                    String accountId = result.asJSONObject().getString("id");
+                    contactField.put("AccountId", accountId);
+                    createContact(contactField);
                 } catch (Exception e) {
                     onError(e);
                 }
-                return null;
             }
 
             @Override
@@ -284,21 +286,20 @@ public class RecognizeActivity extends SalesforceActivity {
                         Toast.LENGTH_LONG).show();
             }
         });
-
-        return null;
     }
 
     private void createContact(HashMap<String, Object> contactField) throws IOException{
         RestRequest restRequest = RestRequest.getRequestForCreate(getString(R.string.api_version), "Contact", contactField);
         restClient.sendAsync(restRequest, new RestClient.AsyncRequestCallback() {
             @Override
-            public String onSuccess(RestRequest request, RestResponse result) {
+            public void onSuccess(RestRequest request, RestResponse result) {
                 try {
-
+                    Toast.makeText(RecognizeActivity.this,
+                            "Contact Created Successfully",
+                            Toast.LENGTH_LONG).show();
                 } catch (Exception e) {
                     onError(e);
                 }
-                return null;
             }
 
             @Override
@@ -344,24 +345,9 @@ public class RecognizeActivity extends SalesforceActivity {
             {
 
                 ArrayList<String> name =new ArrayList<String>();
+                ArrayList<String> job=new ArrayList<>();
                 Gson gson = new Gson();
                 OCR r = gson.fromJson(data, OCR.class);
-                String pattern = "[0-9]+";
-                String preDirections = "S W|SW|S E|SE|N W|NW|N E|NE|N|E|W|S";
-                String suffixes = "ALLEY|ALLEE|ALY|ALLEY|ALLY|ALY|ANEX|ANEX|ANX|ANNEX|ANNX|ANX|ARCADE|ARC|ARC|ARCADE|AVENUE|AV|AVE|AVE|AVEN|AVENU|AVENUE|AVN|AVNUE|BAYOU|BAYOO|BYU|BAYOU|BEACH|BCH|BCH|BEACH|BEND|BEND|BND|BND|BLUFF|BLF|BLF|BLUF|BLUFF|BLUFFS|BLUFFS|BLFS|BOTTOM|BOT|BTM|BTM|BOTTM|BOTTOM|BOULEVARD|BLVD|BLVD|BOUL|BOULEVARD|BOULV|BRANCH|BR|BR|BRNCH|BRANCH|BRIDGE|BRDGE|BRG|BRG|BRIDGE|BROOK|BRK|BRK|BROOK|BROOKS|BROOKS|BRKS|BURG|BURG|BG|BURGS|BURGS|BGS|BYPASS|BYP|BYP|BYPA|BYPAS|BYPASS|BYPS|CAMP|CAMP|CP|CP|CMP|CANYON|CANYN|CYN|CANYON|CNYN|CAPE|CAPE|CPE|CPE|CAUSEWAY|CAUSEWAY|CSWY|CAUSWA|CSWY|CENTER|CEN|CTR|CENT|CENTER|CENTR|CENTRE|CNTER|CNTR|CTR|CENTERS|CENTERS|CTRS|CIRCLE|CIR|CIR|CIRC|CIRCL|CIRCLE|CRCL|CRCLE|CIRCLES|CIRCLES|CIRS|CLIFF|CLF|CLF|CLIFF|CLIFFS|CLFS|CLFS|CLIFFS|CLUB|CLB|CLB|CLUB|COMMON|COMMON|CMN|COMMONS|COMMONS|CMNS|CORNER|COR|COR|CORNER|CORNERS|CORNERS|CORS|CORS|COURSE|COURSE|CRSE|CRSE|COURT|COURT|CT|CT|COURTS|COURTS|CTS|CTS|COVE|COVE|CV|CV|COVES|COVES|CVS|CREEK|CREEK|CRK|CRK|CRESCENT|CRESCENT|CRES|CRES|CRSENT|CRSNT|CREST|CREST|CRST|CROSSING|CROSSING|XING|CRSSNG|XING|CROSSROAD|CROSSROAD|XRD|CROSSROADS|CROSSROADS|XRDS|CURVE|CURVE|CURV|DALE|DALE|DL|DL|DAM|DAM|DM|DM|DIVIDE|DIV|DV|DIVIDE|DV|DVD|DRIVE|DR|DR|DRIV|DRIVE|DRV|DRIVES|DRIVES|DRS|ESTATE|EST|EST|ESTATE|ESTATES|ESTATES|ESTS|ESTS|EXPRESSWAY|EXP|EXPY|EXPR|EXPRESS|EXPRESSWAY|EXPW|EXPY|EXTENSION|EXT|EXT|EXTENSION|EXTN|EXTNSN|EXTENSIONS|EXTS|EXTS|FALL|FALL|FALL|FALLS|FALLS|FLS|FLS|FERRY|FERRY|FRY|FRRY|FRY|FIELD|FIELD|FLD|FLD|FIELDS|FIELDS|FLDS|FLDS|FLAT|FLAT|FLT|FLT|FLATS|FLATS|FLTS|FLTS|FORD|FORD|FRD|FRD|FORDS|FORDS|FRDS|FOREST|FOREST|FRST|FORESTS|FRST|FORGE|FORG|FRG|FORGE|FRG|FORGES|FORGES|FRGS|FORK|FORK|FRK|FRK|FORKS|FORKS|FRKS|FRKS|FORT|FORT|FT|FRT|FT|FREEWAY|FREEWAY|FWY|FREEWY|FRWAY|FRWY|FWY|GARDEN|GARDEN|GDN|GARDN|GRDEN|GRDN|GARDENS|GARDENS|GDNS|GDNS|GRDNS|GATEWAY|GATEWAY|GTWY|GATEWY|GATWAY|GTWAY|GTWY|GLEN|GLEN|GLN|GLN|GLENS|GLENS|GLNS|GREEN|GREEN|GRN|GRN|GREENS|GREENS|GRNS|GROVE|GROV|GRV|GROVE|GRV|GROVES|GROVES|GRVS|HARBOR|HARB|HBR|HARBOR|HARBR|HBR|HRBOR|HARBORS|HARBORS|HBRS|HAVEN|HAVEN|HVN|HVN|HEIGHTS|HT|HTS|HTS|HIGHWAY|HIGHWAY|HWY|HIGHWY|HIWAY|HIWY|HWAY|HWY|HILL|HILL|HL|HL|HILLS|HILLS|HLS|HLS|HOLLOW|HLLW|HOLW|HOLLOW|HOLLOWS|HOLW|HOLWS|INLET|INLT|INLT|ISLAND|IS|IS|ISLAND|ISLND|ISLANDS|ISLANDS|ISS|ISLNDS|ISS|ISLE|ISLE|ISLE|ISLES|JUNCTION|JCT|JCT|JCTION|JCTN|JUNCTION|JUNCTN|JUNCTON|JUNCTIONS|JCTNS|JCTS|JCTS|JUNCTIONS|KEY|KEY|KY|KY|KEYS|KEYS|KYS|KYS|KNOLL|KNL|KNL|KNOL|KNOLL|KNOLLS|KNLS|KNLS|KNOLLS|LAKE|LK|LK|LAKE|LAKES|LKS|LKS|LAKES|LAND|LAND|LAND|LANDING|LANDING|LNDG|LNDG|LNDNG|LANE|LANE|LN|LN|LIGHT|LGT|LGT|LIGHT|LIGHTS|LIGHTS|LGTS|LOAF|LF|LF|LOAF|LOCK|LCK|LCK|LOCK|LOCKS|LCKS|LCKS|LOCKS|LODGE|LDG|LDG|LDGE|LODG|LODGE|LOOP|LOOP|LOOP|LOOPS|MALL|MALL|MALL|MANOR|MNR|MNR|MANOR|MANORS|MANORS|MNRS|MNRS|MEADOW|MEADOW|MDW|MEADOWS|MDW|MDWS|MDWS|MEADOWS|MEDOWS|MEWS|MEWS|MEWS|MILL|MILL|ML|MILLS|MILLS|MLS|MISSION|MISSN|MSN|MSSN|MOTORWAY|MOTORWAY|MTWY|MOUNT|MNT|MT|MT|MOUNT|MOUNTAIN|MNTAIN|MTN|MNTN|MOUNTAIN|MOUNTIN|MTIN|MTN|MOUNTAINS|MNTNS|MTNS|MOUNTAINS|NECK|NCK|NCK|NECK|ORCHARD|ORCH|ORCH|ORCHARD|ORCHRD|OVAL|OVAL|OVAL|OVL|OVERPASS|OVERPASS|OPAS|PARK|PARK|PARK|PRK|PARKS|PARKS|PARK|PARKWAY|PARKWAY|PKWY|PARKWY|PKWAY|PKWY|PKY|PARKWAYS|PARKWAYS|PKWY|PKWYS|PASS|PASS|PASS|PASSAGE|PASSAGE|PSGE|PATH|PATH|PATH|PATHS|PIKE|PIKE|PIKE|PIKES|PINE|PINE|PNE|PINES|PINES|PNES|PNES|PLACE|PL|PL|PLAIN|PLAIN|PLN|PLN|PLAINS|PLAINS|PLNS|PLNS|PLAZA|PLAZA|PLZ|PLZ|PLZA|POINT|POINT|PT|PT|POINTS|POINTS|PTS|PTS|PORT|PORT|PRT|PRT|PORTS|PORTS|PRTS|PRTS|PRAIRIE|PR|PR|PRAIRIE|PRR|RADIAL|RAD|RADL|RADIAL|RADIEL|RADL|RAMP|RAMP|RAMP|RANCH|RANCH|RNCH|RANCHES|RNCH|RNCHS|RAPID|RAPID|RPD|RPD|RAPIDS|RAPIDS|RPDS|RPDS|REST|REST|RST|RST|RIDGE|RDG|RDG|RDGE|RIDGE|RIDGES|RDGS|RDGS|RIDGES|RIVER|RIV|RIV|RIVER|RVR|RIVR|ROAD|RD|RD|ROAD|ROADS|ROADS|RDS|RDS|ROUTE|ROUTE|RTE|ROW|ROW|ROW|RUE|RUE|RUE|RUN|RUN|RUN|SHOAL|SHL|SHL|SHOAL|SHOALS|SHLS|SHLS|SHOALS|SHORE|SHOAR|SHR|SHORE|SHR|SHORES|SHOARS|SHRS|SHORES|SHRS|SKYWAY|SKYWAY|SKWY|SPRING|SPG|SPG|SPNG|SPRING|SPRNG|SPRINGS|SPGS|SPGS|SPNGS|SPRINGS|SPRNGS|SPUR|SPUR|SPUR|SPURS|SPURS|SPUR|SQUARE|SQ|SQ|SQR|SQRE|SQU|SQUARE|SQUARES|SQRS|SQS|SQUARES|STATION|STA|STA|STATION|STATN|STN|STRAVENUE|STRA|STRA|STRAV|STRAVEN|STRAVENUE|STRAVN|STRVN|STRVNUE|STREAM|STREAM|STRM|STREME|STRM|STREET|STREET|ST|STRT|ST|STR|STREETS|STREETS|STS|SUMMIT|SMT|SMT|SUMIT|SUMITT|SUMMIT|TERRACE|TER|TER|TERR|TERRACE|THROUGHWAY|THROUGHWAY|TRWY|TRACE|TRACE|TRCE|TRACES|TRCE|TRACK|TRACK|TRAK|TRACKS|TRAK|TRK|TRKS|TRAFFICWAY|TRAFFICWAY|TRFY|TRAIL|TRAIL|TRL|TRAILS|TRL|TRLS|TRAILER|TRAILER|TRLR|TRLR|TRLRS|TUNNEL|TUNEL|TUNL|TUNL|TUNLS|TUNNEL|TUNNELS|TUNNL|TURNPIKE|TRNPK|TPKE|TURNPIKE|TURNPK|UNDERPASS|UNDERPASS|UPAS|UNION|UN|UN|UNION|UNIONS|UNIONS|UNS|VALLEY|VALLEY|VLY|VALLY|VLLY|VLY|VALLEYS|VALLEYS|VLYS|VLYS|VIADUCT|VDCT|VIA|VIA|VIADCT|VIADUCT|VIEW|VIEW|VW|VW|VIEWS|VIEWS|VWS|VWS|VILLAGE|VILL|VLG|VILLAG|VILLAGE|VILLG|VILLIAGE|VLG|VILLAGES|VILLAGES|VLGS|VLGS|VILLE|VILLE|VL|VL|VISTA|VIS|VIS|VIST|VISTA|VST|VSTA|WALK|WALK|WALK|WALKS|WALKS|WALK|WALL|WALL|WALL|WAY|WY|WAY|WAY|WAYS|WAYS|WAYS|WELL|WELL|WL|WELLS|WELLS|WLS";
-                String unitDesignators =
-                        "APARTMENT|APT|BUILDING|BLDG|FLOOR|FL|SUITE|STE|UNIT|UNIT|ROOM|RM|DEPARTMENT|DEPT|SPC";
-                String formatting="\\\\d+\\\\s+([a-zA-Z]+|[a-zA-Z]+\\\\s[a-zA-Z]+)";
-
-
-                //Validate phone numbers of format "1234567890"
-                String firstMobilePattern="\"\\\\d{10}\"";
-                //Validate phone numbers with -,.or spaces
-                String secondMobilePattern="\"\\\\d{3}[-\\\\.\\\\s]\\\\d{3}[-\\\\.\\\\s]\\\\d{4}\"";
-                //Validate phone number with extension length from 3 to 5
-                String thirdMobilePattern="\"\\\\d{3}-\\\\d{3}-\\\\d{4}\\\\s(x|(ext))\\\\d{3,5}\"";
-                //Validate phone number where area code is in braces
-                String fourthMobilePattern="\"\\\\(\\\\d{3}\\\\)-\\\\d{3}-\\\\d{4}\"";
                 String pattern1 = "^[\\p{L} .'-]+$";
                 String emailPattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                         + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
@@ -377,35 +363,47 @@ public class RecognizeActivity extends SalesforceActivity {
                     {
                         for (Word word : line.words)
                         {
-
-                            if (word.text.matches("[+]?[0-9]{10}")||word.text.matches("^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$") || word.text.matches("[0-9]{10}") || word.text.matches("[+]?[0-9]{2}[-][0-9]{10}")|| word.text.matches("[+]?[0-9]{12}"))
-                            {
-                                result += word.text + " ";
-                            }
-                            if (word.text.matches(emailPattern))
-                            {
-                                result1 = word.text + " ";
-                            }
-                            if (word.text.matches(pattern1))
-                            {
-                                result2 =word.text + " ";
-                            }
-                            name.add(result2);
-
-
+                            allValues.add(word.text);
+//                            if (word.text.matches("[+]?[0-9]{10}") || word.text.matches("^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$") || word.text.matches("[0-9]{10}") || word.text.matches("[+]?[0-9]{2}[-][0-9]{10}") || word.text.matches("[+]?[0-9]{12}") || word.text.matches("^(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*$"))
+//                            {
+//                              int i= allValues.indexOf(word.text);
+//                                int temp=i-1;
+//                                if (allValues.get(temp).contains("Mobile"))
+//                                 {
+//                                    result += word.text + " ";
+//                                }
+//
+//                            }
+//                            if (word.text.matches(emailPattern))
+//                            {
+//                                result1 = word.text + " ";
+//                            }
+//                            if (word.text.matches(pattern1))
+//                            {
+//                                result2 =word.text + " ";
+//                            }
+//                            name.add(result2);
+//
+//                            if(word.text.equals(item))
+//                            {
+//                                mailingAddress.setText(word.text);
+//                            }
+//                             result3=word.text + " ";
                         }
-                        result += "";
-                        result1 += "";
-                        result3 +="";
+
+//                        result += "";
+//                        result1 += "";
+//                        result3 +="";
+//                        job.add(result3);
 
                     }
-                    result += "";
-                    result1 += "";
-                    result3 +="";
+
+//                    result += "";
+//                    result1 += "";
+//                    result3 +="";
 
                 }
-
-                mEditText.setText(result);
+                mEditText.setText(getMobileNumber());
                 mEditEmailText.setText(result1);
              //   mEditAddressText.setText(result3);
                 mSpinner = (Spinner) findViewById(R.id.name);
@@ -423,13 +421,11 @@ public class RecognizeActivity extends SalesforceActivity {
 
                     }
                 });
-
                 lSpinner=(Spinner)findViewById(R.id.lastname);
                 lSpinner.setAdapter(nameAdapter);
-
-
-
-
+                   jobSpinner =(Spinner)findViewById(R.id.job);
+                RecognizeActivity.JobTitle jobAdapter =new RecognizeActivity.JobTitle(job);
+                jobSpinner.setAdapter(jobAdapter);
 
             }
             mButtonSelectImage.setEnabled(true);
@@ -437,6 +433,52 @@ public class RecognizeActivity extends SalesforceActivity {
 
     }
 
+    private String getMobileNumber()
+    {
+        String number = new String();
+        for(String value : allValues)
+        {
+            int i = 0;
+            if(value.toLowerCase().contains("mobile") || value.toLowerCase().contains("m") || value.toLowerCase().contains("mob"))
+            {
+                int index = allValues.indexOf(value);
+                if((index + 1) < allValues.size() && IsInteger(allValues.get(index + 1)))
+                {
+                    number = allValues.get(index + 1) + " ";
+                    i = index + 2;
+                }
+                else
+                {
+                    continue;
+                }
+                while (!allValues.get(i).contains("+") || IsInteger(allValues.get(i)))
+                {
+
+                    if (allValues.get(i).matches("[+]?[0-9]{10}") || allValues.get(i).matches("^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$") || allValues.get(i).matches("[0-9]{10}") || allValues.get(i).matches("[+]?[0-9]{2}[-][0-9]{10}") || allValues.get(i).matches("[+]?[0-9]{12}") || allValues.get(i).matches("^(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*$"))
+                    {
+                        number += allValues.get(i) + " ";
+                    }
+                    i++;
+
+                    if(i >= allValues.size())
+                        break;
+                }
+            }
+        }
+        return number;
+    }
+
+    private boolean IsInteger(String value)
+    {
+        try{
+            Integer.parseInt(value);
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
     public class NameAdapter extends BaseAdapter implements SpinnerAdapter
     {
         ArrayList<String> names = new ArrayList<>();
@@ -444,7 +486,6 @@ public class RecognizeActivity extends SalesforceActivity {
         {
             this.names=names;
         }
-
         @Override
         public int getCount()
         {
@@ -464,7 +505,8 @@ public class RecognizeActivity extends SalesforceActivity {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(int position, View convertView, ViewGroup parent)
+        {
             View nameView;
             if (convertView != null)
             {
@@ -474,10 +516,50 @@ public class RecognizeActivity extends SalesforceActivity {
             {
                 nameView = getLayoutInflater().inflate(R.layout.name_item, parent, false);
             }
-
             TextView nameItem = (TextView) nameView.findViewById(R.id.nameItem);
             nameItem.setText(names.get(position));
             return nameView;
+        }
+    }
+
+    public class JobTitle extends BaseAdapter implements SpinnerAdapter
+    {
+        ArrayList<String> job = new ArrayList<>();
+        public JobTitle(ArrayList<String> job)
+        {
+            this.job=job;
+        }
+        @Override
+        public int getCount() {
+            return job.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return job.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return Long.valueOf(position);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent)
+        {
+            View jobView;
+            if (convertView != null)
+            {
+                jobView = convertView;
+            }
+            else
+            {
+                jobView = getLayoutInflater().inflate(R.layout.name_item, parent, false);
+            }
+
+            TextView nameItem = (TextView) jobView.findViewById(R.id.nameItem);
+            nameItem.setText(job.get(position));
+            return jobView;
         }
     }
 }

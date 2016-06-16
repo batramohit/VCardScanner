@@ -4,30 +4,40 @@
     api-level="23"
     density="560dpi"
     format="7"
-    timestamp="52982729586146"
+    timestamp="32415677508407"
     token="-6162135721786692860" >
 
     <task
         name="javac"
-        duration="247" />
+        duration="117" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="436" />
+        duration="11" />
     <task
         name="verifier"
-        duration="181" />
+        duration="1" />
 
     <artifact
-        location="D:\VCardScanner\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
+        location="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
+        type="DEX" />
 
-    <build timestamp="52982729586146" >
+    <build timestamp="25505894385897" >
         <artifact
             location="D:\VCardScanner\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
+    </build>
+    <build timestamp="28815340170445" >
+        <artifact
+            location="D:\VCardScanner\app\build\intermediates\res\resources-debug.ap_"
+            type="RESOURCES" />
+    </build>
+    <build timestamp="32415677508407" >
+        <artifact
+            location="D:\VCardScanner\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

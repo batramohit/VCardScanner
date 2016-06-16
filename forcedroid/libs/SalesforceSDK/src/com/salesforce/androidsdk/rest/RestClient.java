@@ -106,7 +106,7 @@ public class RestClient {
 	 * Interface through which the result of an asynchronous request is handled.
 	 */
 	public interface AsyncRequestCallback {
-		String onSuccess(RestRequest request, RestResponse response);
+		void onSuccess(RestRequest request, RestResponse response);
 		void onError(Exception exception);
 	}
 	

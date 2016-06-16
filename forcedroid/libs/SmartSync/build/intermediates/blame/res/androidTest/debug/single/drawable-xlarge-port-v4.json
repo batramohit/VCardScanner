@@ -1,9 +1,5 @@
 [
     {
-        "merged": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xlarge-port-v4\\sf__oauth_background.png",
-        "source": "D:\\SalesForceMobileSDK\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-xlarge-port-v4\\sf__oauth_background.png"
-    },
-    {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xlarge-port-v4\\sf__oauth_background.png",
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-xlarge-port-v4\\sf__oauth_background.png"
     }
