@@ -44,12 +44,12 @@
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
-        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
-        "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_ratingbar_small_material.xml"
-    },
-    {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_ratingbar_small_material.xml"
     },
     {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
