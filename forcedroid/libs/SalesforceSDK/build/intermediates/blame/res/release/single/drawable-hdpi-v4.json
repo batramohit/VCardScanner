@@ -76,12 +76,12 @@
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
-        "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
-    },
-    {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png",
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\abc_ic_ab_back_mtrl_am_alpha.png",

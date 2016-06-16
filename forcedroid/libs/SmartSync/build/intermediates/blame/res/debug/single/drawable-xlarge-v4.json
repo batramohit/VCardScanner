@@ -24,12 +24,12 @@
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-xlarge-v4\\sf__header_refresh.png"
     },
     {
-        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\debug\\drawable-xlarge-v4\\sf__header_refresh_press.png",
-        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-xlarge-v4\\sf__header_refresh_press.png"
-    },
-    {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\debug\\drawable-xlarge-v4\\sf__toolbar_background.xml",
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-xlarge-v4\\sf__toolbar_background.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\debug\\drawable-xlarge-v4\\sf__header_refresh_press.png",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-xlarge-v4\\sf__header_refresh_press.png"
     },
     {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\debug\\drawable-xlarge-v4\\sf__nav_shadow.png",

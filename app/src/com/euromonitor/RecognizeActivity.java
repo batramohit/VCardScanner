@@ -32,7 +32,6 @@ import com.microsoft.projectoxford.vision.contract.Region;
 import com.microsoft.projectoxford.vision.contract.Word;
 import com.microsoft.projectoxford.vision.rest.VisionServiceException;
 import com.salesforce.androidsdk.app.SalesforceSDKManager;
-import com.salesforce.androidsdk.auth.HttpAccess;
 import com.salesforce.androidsdk.rest.RestClient;
 import com.salesforce.androidsdk.rest.RestRequest;
 import com.salesforce.androidsdk.rest.RestResponse;
@@ -67,7 +66,9 @@ public class RecognizeActivity extends SalesforceActivity {
 
     // The edit to show status and result.
     private EditText mEditText;
+    private EditText mEditPhoneText;
     private EditText mEditEmailText;
+    private EditText mEditFaxText;
     private EditText mEditNameText;
     private Spinner mSpinner;
     private Spinner lSpinner;
@@ -77,7 +78,13 @@ public class RecognizeActivity extends SalesforceActivity {
     private Spinner jobSpinner;
     ArrayList<String> item=new ArrayList<>();
     ArrayList<String> allValues=new ArrayList<>();
+    ArrayList<String> allLines=new ArrayList<>();
     ArrayAdapter<String> adapter;
+    String emailPattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+            + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+    String urlPattern = "^(http:\\/\\/|https:\\/\\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?$";
+
     @Override
     public void onResume(RestClient client) {
         this.restClient = client;
@@ -94,12 +101,14 @@ public class RecognizeActivity extends SalesforceActivity {
 
         mButtonSelectImage = (Button) findViewById(R.id.buttonSelectImage);
         mEditText = (EditText) findViewById(R.id.editTextResult);
+        mEditPhoneText = (EditText) findViewById(R.id.editPhoneResult);
+        mEditFaxText = (EditText)findViewById(R.id.editFaxResult);
         mEditEmailText = (EditText) findViewById(R.id.editTextEmailResult);
         mailingAddress=(AutoCompleteTextView)findViewById(R.id.mailingAddress); Country country=new Country();
         item =country.getAllCountryName();
         adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,item);
         mailingAddress.setAdapter(adapter);
-       mailingAddress.setThreshold(1);
+        mailingAddress.setThreshold(1);
       //  mEditAddressText=(EditText) findViewById(R.id.editTextAddressResult);
         //  mEditNameText = (EditText) findViewById(R.id.editTextNameResult);
 
@@ -188,6 +197,8 @@ public class RecognizeActivity extends SalesforceActivity {
         mButtonSelectImage.setEnabled(false);
         mEditText.setText("Analyzing...");
         mEditEmailText.setText("Analyzing...");
+        mEditPhoneText.setText("Analyzing...");
+        mEditFaxText.setText("Analyzing...");
 
 
         try
@@ -357,35 +368,27 @@ public class RecognizeActivity extends SalesforceActivity {
                 Gson gson = new Gson();
                 OCR r = gson.fromJson(data, OCR.class);
                 String pattern1 = "^[\\p{L} .'-]+$";
-                String emailPattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
                 String namePattern= "[A-Z][a-z]+( [A-Z][a-z]+)";
 
                 String result = "";
                 String result1 = "";
                 String result2 = "";
                 String result3="";
+                allLines.clear();
+                allValues.clear();
                 for (Region reg : r.regions)
                 {
                     for (Line line : reg.lines)
                     {
+                        String lineData = new String();
                         for (Word word : line.words)
                         {
+                            lineData += word.text + " ";
                             allValues.add(word.text);
-//                            if (word.text.matches("[+]?[0-9]{10}") || word.text.matches("^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$") || word.text.matches("[0-9]{10}") || word.text.matches("[+]?[0-9]{2}[-][0-9]{10}") || word.text.matches("[+]?[0-9]{12}") || word.text.matches("^(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*$"))
-//                            {
-//                              int i= allValues.indexOf(word.text);
-//                                int temp=i-1;
-//                                if (allValues.get(temp).contains("Mobile"))
-//                                 {
-//                                    result += word.text + " ";
-//                                }
-//
-//                            }
-//                            if (word.text.matches(emailPattern))
-//                            {
-//                                result1 = word.text + " ";
-//                            }
+                            if (word.text.matches(emailPattern))
+                            {
+                                result1 = word.text + " ";
+                            }
 //                            if (word.text.matches(pattern1))
 //                            {
 //                                result2 =word.text + " ";
@@ -398,6 +401,7 @@ public class RecognizeActivity extends SalesforceActivity {
 //                            }
 //                             result3=word.text + " ";
                         }
+                        allLines.add(lineData);
 
 //                        result += "";
 //                        result1 += "";
@@ -412,8 +416,9 @@ public class RecognizeActivity extends SalesforceActivity {
 
                 }
                 mEditText.setText(getMobileNumber());
+                mEditPhoneText.setText(getPhoneNumber());
+                mEditFaxText.setText(getFaxNumber());
                 mEditEmailText.setText(result1);
-             //   mEditAddressText.setText(result3);
                 mSpinner = (Spinner) findViewById(R.id.name);
                 RecognizeActivity.NameAdapter nameAdapter = new RecognizeActivity.NameAdapter(name);
                 mSpinner.setAdapter(nameAdapter);
@@ -447,7 +452,7 @@ public class RecognizeActivity extends SalesforceActivity {
         for(String value : allValues)
         {
             int i = 0;
-            if(value.toLowerCase().contains("mobile") || value.toLowerCase().contains("m") || value.toLowerCase().contains("mob"))
+            if(value.toLowerCase().contains("mobile") || value.toLowerCase().contains("m") || value.toLowerCase().contains("mob") || value.toLowerCase().contains("cell"))
             {
                 int index = allValues.indexOf(value);
                 if((index + 1) < allValues.size() && IsInteger(allValues.get(index + 1)))
@@ -468,7 +473,82 @@ public class RecognizeActivity extends SalesforceActivity {
                     }
                     i++;
 
-                    if(i >= allValues.size())
+                    if(i >= allValues.size() || allValues.get(i).toLowerCase().contains("phone") || allValues.get(i).toLowerCase().contains("tel") || allValues.get(i).toLowerCase().contains("direct") || allValues.get(i).toLowerCase().contains("ph")
+                            || allValues.get(i).toLowerCase().contains("t") || allValues.get(i).toLowerCase().contains("fax") || allValues.get(i).toLowerCase().contains("f"))
+                        break;
+                }
+            }
+        }
+        return number;
+    }
+
+    private String getPhoneNumber()
+    {
+        String number = new String();
+        for(String value : allValues)
+        {
+            int i = 0;
+            if(value.toLowerCase().contains("phone") || value.toLowerCase().contains("tel") || value.toLowerCase().contains("direct") || value.toLowerCase().contains("ph") || value.toLowerCase().contains("t"))
+            {
+                int index = allValues.indexOf(value);
+                if((index + 1) < allValues.size() && IsInteger(allValues.get(index + 1)))
+                {
+                    number = allValues.get(index + 1) + " ";
+                    i = index + 2;
+                }
+                else
+                {
+                    continue;
+                }
+                while (!allValues.get(i).contains("+") || IsInteger(allValues.get(i)))
+                {
+
+                    if (allValues.get(i).matches("[+]?[0-9]{10}") || allValues.get(i).matches("^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$") || allValues.get(i).matches("[0-9]{10}") || allValues.get(i).matches("[+]?[0-9]{2}[-][0-9]{10}") || allValues.get(i).matches("[+]?[0-9]{12}") || allValues.get(i).matches("^(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*$"))
+                    {
+                        number += allValues.get(i) + " ";
+                    }
+                    i++;
+
+                    if(i >= allValues.size() || allValues.get(i).toLowerCase().contains("mobile") || allValues.get(i).toLowerCase().contains("m")
+                            || allValues.get(i).toLowerCase().contains("mob") || allValues.get(i).toLowerCase().contains("cell") || allValues.get(i).toLowerCase().contains("fax")
+                            || allValues.get(i).toLowerCase().contains("f"))
+                        break;
+                }
+            }
+        }
+        return number;
+    }
+
+    private String getFaxNumber()
+    {
+        String number = new String();
+        for(String value : allValues)
+        {
+            int i = 0;
+            if(value.toLowerCase().contains("fax") || value.toLowerCase().contains("f"))
+            {
+                int index = allValues.indexOf(value);
+                if((index + 1) < allValues.size() && IsInteger(allValues.get(index + 1)))
+                {
+                    number = allValues.get(index + 1) + " ";
+                    i = index + 2;
+                }
+                else
+                {
+                    continue;
+                }
+                while (!allValues.get(i).contains("+") || IsInteger(allValues.get(i)))
+                {
+
+                    if (allValues.get(i).matches("[+]?[0-9]{10}") || allValues.get(i).matches("^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$") || allValues.get(i).matches("[0-9]{10}") || allValues.get(i).matches("[+]?[0-9]{2}[-][0-9]{10}") || allValues.get(i).matches("[+]?[0-9]{12}") || allValues.get(i).matches("^(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*$"))
+                    {
+                        number += allValues.get(i) + " ";
+                    }
+                    i++;
+
+                    if(i >= allValues.size() || allValues.get(i).toLowerCase().contains("mobile") || allValues.get(i).toLowerCase().contains("m")
+                            || allValues.get(i).toLowerCase().contains("mob") || allValues.get(i).toLowerCase().contains("cell") || allValues.get(i).toLowerCase().contains("phone")
+                            || allValues.get(i).toLowerCase().contains("tel") || allValues.get(i).toLowerCase().contains("direct") || allValues.get(i).toLowerCase().contains("ph") || allValues.get(i).toLowerCase().contains("t") )
                         break;
                 }
             }
@@ -487,6 +567,7 @@ public class RecognizeActivity extends SalesforceActivity {
             return false;
         }
     }
+
     public class NameAdapter extends BaseAdapter implements SpinnerAdapter
     {
         ArrayList<String> names = new ArrayList<>();
