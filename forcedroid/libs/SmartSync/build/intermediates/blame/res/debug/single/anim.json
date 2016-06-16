@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_slide_out_top.xml"
-    },
-    {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_slide_out_top.xml"
     },
     {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",

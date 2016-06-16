@@ -48,12 +48,12 @@
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_media_action.xml"
     },
     {
-        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_list_menu_item_icon.xml"
-    },
-    {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\sf__passcode.xml",
@@ -116,12 +116,12 @@
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\sf__custom_server_url.xml"
     },
     {
-        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\notification_template_part_time.xml",
-        "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_part_time.xml"
-    },
-    {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\notification_template_lines.xml",
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_lines.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\notification_template_part_time.xml",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_part_time.xml"
     },
     {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SalesforceSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_action_mode_bar.xml",

@@ -4,12 +4,12 @@
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
-        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\release\\layout\\abc_alert_dialog_material.xml",
-        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_alert_dialog_material.xml"
-    },
-    {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\release\\layout\\sf__custom_server_url.xml",
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\layout\\sf__custom_server_url.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\release\\layout\\abc_alert_dialog_material.xml",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_big_media.xml",
@@ -96,16 +96,16 @@
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\layout\\sf__fingerprint_dialog.xml"
     },
     {
-        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_close_item_material.xml",
-        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_mode_close_item_material.xml"
-    },
-    {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_multichoice_material.xml",
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_up_container.xml",
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_menu_layout.xml",
@@ -124,12 +124,12 @@
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_item_material.xml",
-        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\select_dialog_item_material.xml"
-    },
-    {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_title_item.xml",
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\release\\layout\\select_dialog_item_material.xml",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\select_dialog_item_material.xml"
     },
     {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartSync\\build\\intermediates\\res\\merged\\release\\layout\\abc_activity_chooser_view.xml",

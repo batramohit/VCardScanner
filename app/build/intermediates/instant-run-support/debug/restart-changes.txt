@@ -1,2 +1,0 @@
-CHANGED,D:\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\1\5\main\com\euromonitor\ContactActivity.class
-CHANGED,D:\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\1\5\main\com\euromonitor\ContactActivity$1.class
