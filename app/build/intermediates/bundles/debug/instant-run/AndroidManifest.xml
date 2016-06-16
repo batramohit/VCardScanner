@@ -65,6 +65,11 @@
             android:theme="@style/SalesforceSDK.ActionBarTheme" >
         </activity>
         <activity
+            android:name="com.euromonitor.AccountActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SalesforceSDK.ActionBarTheme" >
+        </activity>
+        <activity
             android:name="com.euromonitor.SelectImageActivity"
             android:label="@string/select_an_image"
             android:screenOrientation="portrait"

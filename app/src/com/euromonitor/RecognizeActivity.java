@@ -125,11 +125,19 @@ public class RecognizeActivity extends SalesforceActivity {
             return true;
         }
 
+        else if(id == R.id.action_accounts)
+        {
+            Intent intent = new Intent(this, AccountActivity.class);
+            startActivity(intent);
+        }
+
         else if(id == R.id.action_contacts)
         {
             Intent intent = new Intent(this, ContactActivity.class);
             startActivity(intent);
         }
+
+
 
         return super.onOptionsItemSelected(item);
     }

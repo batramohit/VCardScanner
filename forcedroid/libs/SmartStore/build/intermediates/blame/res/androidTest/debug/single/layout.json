@@ -116,12 +116,12 @@
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_menu_layout.xml"
-    },
-    {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
         "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
         "merged": "D:\\VCardScanner\\forcedroid\\libs\\SmartStore\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_action_bar_title_item.xml",
