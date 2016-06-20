@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xlarge-v4\\sf__oauth_background.png",
-        "source": "D:\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-xlarge-v4\\sf__oauth_background.png"
-    },
-    {
         "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xlarge-v4\\sf__header_right_border.xml",
         "source": "D:\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-xlarge-v4\\sf__header_right_border.xml"
+    },
+    {
+        "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xlarge-v4\\sf__oauth_background.png",
+        "source": "D:\\VCardScanner\\app\\build\\intermediates\\exploded-aar\\VCardScanner.forcedroid.libs\\SalesforceSDK\\unspecified\\res\\drawable-xlarge-v4\\sf__oauth_background.png"
     },
     {
         "merged": "D:\\VCardScanner\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xlarge-v4\\sf__login_content_header.xml",

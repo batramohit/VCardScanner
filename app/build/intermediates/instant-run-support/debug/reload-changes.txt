@@ -1,5 +1,0 @@
-CHANGED,D:\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,D:\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\euromonitor\ContactActivity$override.class
-CHANGED,D:\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\euromonitor\R$id$override.class
-CHANGED,D:\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\euromonitor\MainActivity$override.class
-CHANGED,D:\VCardScanner\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\euromonitor\RecognizeActivity$override.class
