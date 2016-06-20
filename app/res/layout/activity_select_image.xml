@@ -11,11 +11,9 @@
     android:baselineAligned="false"
     android:orientation="vertical"
     tools:context="com.euromonitor.ImageHelper">
-
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2">
-
         <TextView
             android:id="@+id/info"
             android:layout_width="wrap_content"
@@ -23,7 +21,6 @@
             android:layout_centerHorizontal="true"
             android:layout_above="@+id/button_take_a_photo"
             android:layout_gravity="center" />
-
         <Button
             android:id="@+id/button_take_a_photo"
             android:layout_width="match_parent"
@@ -34,11 +31,9 @@
             android:onClick="takePhoto"
             style="@style/ButtonStyle" />
     </RelativeLayout>
-
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
-
         <Button
             android:id="@+id/button_select_a_photo_in_album"
             android:layout_width="match_parent"
@@ -49,5 +44,4 @@
             android:onClick="selectImageInAlbum"
             style="@style/ButtonStyle" />
     </RelativeLayout>
-
 </LinearLayout>

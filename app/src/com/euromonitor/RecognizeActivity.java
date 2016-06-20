@@ -32,7 +32,6 @@ import com.microsoft.projectoxford.vision.contract.Region;
 import com.microsoft.projectoxford.vision.contract.Word;
 import com.microsoft.projectoxford.vision.rest.VisionServiceException;
 import com.salesforce.androidsdk.app.SalesforceSDKManager;
-import com.salesforce.androidsdk.auth.HttpAccess;
 import com.salesforce.androidsdk.rest.RestClient;
 import com.salesforce.androidsdk.rest.RestRequest;
 import com.salesforce.androidsdk.rest.RestResponse;
@@ -58,6 +57,7 @@ public class RecognizeActivity extends SalesforceActivity {
 
     // The button to select an image
     private Button mButtonSelectImage;
+    private Button mButtonUpload;
 
     // The URI of the image selected to detect.
     private Uri mImageUri;
@@ -67,6 +67,7 @@ public class RecognizeActivity extends SalesforceActivity {
 
     // The edit to show status and result.
     private EditText mEditText;
+    private EditText mEditCompanyText;
     private EditText mEditEmailText;
     private EditText mEditNameText;
     private Spinner mSpinner;
@@ -75,14 +76,16 @@ public class RecognizeActivity extends SalesforceActivity {
     private VisionServiceClient client;
     private AutoCompleteTextView mailingAddress;
     private Spinner jobSpinner;
+    private EditText mEditFaxText;
+    private EditText mEditPhoneText;
     ArrayList<String> item=new ArrayList<>();
     ArrayList<String> allValues=new ArrayList<>();
+    ArrayList<String> allLines = new ArrayList<>();
     ArrayAdapter<String> adapter;
     @Override
     public void onResume(RestClient client) {
         this.restClient = client;
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,15 +94,19 @@ public class RecognizeActivity extends SalesforceActivity {
         {
             client = new VisionServiceRestClient(getString(R.string.subscription_key));
         }
-
         mButtonSelectImage = (Button) findViewById(R.id.buttonSelectImage);
+        mButtonUpload=(Button)findViewById(R.id.upload);
         mEditText = (EditText) findViewById(R.id.editTextResult);
+        mEditPhoneText = (EditText) findViewById(R.id.editPhoneResult);
+        mEditFaxText = (EditText)findViewById(R.id.editFaxResult);
         mEditEmailText = (EditText) findViewById(R.id.editTextEmailResult);
-        mailingAddress=(AutoCompleteTextView)findViewById(R.id.mailingAddress); Country country=new Country();
+        mEditCompanyText=(EditText)findViewById(R.id.editTextCompanyResult);
+        mailingAddress=(AutoCompleteTextView)findViewById(R.id.mailingAddress);
+        Country country=new Country();
         item =country.getAllCountryName();
         adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,item);
         mailingAddress.setAdapter(adapter);
-       mailingAddress.setThreshold(1);
+        mailingAddress.setThreshold(1);
       //  mEditAddressText=(EditText) findViewById(R.id.editTextAddressResult);
         //  mEditNameText = (EditText) findViewById(R.id.editTextNameResult);
 
@@ -186,8 +193,11 @@ public class RecognizeActivity extends SalesforceActivity {
     public void doRecognize()
     {
         mButtonSelectImage.setEnabled(false);
+        mButtonUpload.setEnabled(false);
         mEditText.setText("Analyzing...");
         mEditEmailText.setText("Analyzing...");
+        mEditPhoneText.setText("Analyzing...");
+        mEditFaxText.setText("Analyzing...");
 
 
         try
@@ -219,22 +229,30 @@ public class RecognizeActivity extends SalesforceActivity {
         String email = ((EditText)findViewById(R.id.editTextEmailResult)).getText().toString();
         String lastname=lSpinner.getSelectedItem().toString();
         String name=mSpinner.getSelectedItem().toString();
-        contactFildes.put("LastName", lastname);
-        contactFildes.put("FirstName", name);
-        contactFildes.put("Title", "SE");
-        contactFildes.put("Phone", "8050624933");
-        contactFildes.put("MobilePhone", "8050624933");
-        contactFildes.put("Fax", "8050624933");
-        contactFildes.put("Email", email);
-        contactFildes.put("MailingCountry", "India");
-        contactFildes.put("MailingStreet", "Raj Kumar Road");
-        contactFildes.put("MailingCity", "Bangalore");
-        contactFildes.put("MailingPostalCode", "260052");
-        contactFildes.put("Website__c", "www.euromonitor.com");
-        createContact(contactFildes, "ABC");
+        String mobile=((EditText)findViewById(R.id.editTextResult)).getText().toString();
+        String phone=((EditText)findViewById(R.id.editPhoneResult)).getText().toString();
+        String fax=((EditText)findViewById(R.id.editFaxResult)).getText().toString();
+        String country=((AutoCompleteTextView)findViewById(R.id.mailingAddress)).getText().toString();
+        String companyName = ((EditText)findViewById(R.id.editTextCompanyResult)).getText().toString();
+        String jobTitle = jobSpinner.getSelectedItem().toString();
 
-//        Intent intent = new Intent(this, MainActivity.class);
-//        startActivity(intent);
+        if(!country.isEmpty()) {
+            contactFildes.put("LastName", lastname);
+            contactFildes.put("FirstName", name);
+            contactFildes.put("Title", jobTitle);
+            contactFildes.put("Phone", phone);
+            contactFildes.put("MobilePhone", mobile);
+            contactFildes.put("Fax", fax);
+            contactFildes.put("Email", email);
+            contactFildes.put("MailingCountry", country);
+            createContact(contactFildes, companyName);
+        }
+        else
+        {
+            Toast.makeText(RecognizeActivity.this,
+                    "Please enter the company",
+                    Toast.LENGTH_LONG).show();
+        }
     }
 
     private void createContact(final HashMap<String,Object> contact, final String accountName) throws UnsupportedEncodingException {
@@ -365,44 +383,39 @@ public class RecognizeActivity extends SalesforceActivity {
                 String result1 = "";
                 String result2 = "";
                 String result3="";
+                allValues.clear();
+                allLines.clear();
                 for (Region reg : r.regions)
                 {
                     for (Line line : reg.lines)
                     {
+                        String lineData = new String();
                         for (Word word : line.words)
                         {
+                            lineData += word.text + " ";
                             allValues.add(word.text);
-//                            if (word.text.matches("[+]?[0-9]{10}") || word.text.matches("^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$") || word.text.matches("[0-9]{10}") || word.text.matches("[+]?[0-9]{2}[-][0-9]{10}") || word.text.matches("[+]?[0-9]{12}") || word.text.matches("^(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*$"))
-//                            {
-//                              int i= allValues.indexOf(word.text);
-//                                int temp=i-1;
-//                                if (allValues.get(temp).contains("Mobile"))
-//                                 {
-//                                    result += word.text + " ";
-//                                }
-//
-//                            }
-//                            if (word.text.matches(emailPattern))
-//                            {
-//                                result1 = word.text + " ";
-//                            }
-//                            if (word.text.matches(pattern1))
-//                            {
-//                                result2 =word.text + " ";
-//                            }
-//                            name.add(result2);
-//
-//                            if(word.text.equals(item))
-//                            {
-//                                mailingAddress.setText(word.text);
-//                            }
-//                             result3=word.text + " ";
+                            if (word.text.matches(emailPattern))
+                            {
+                                result1 = word.text + " ";
+
+                            }
+                            if (word.text.matches(pattern1))
+                            {
+                                result2 =word.text + " ";
+                            }
+                          name.add(result2);
                         }
+
+                        allLines.add(lineData);
+                        if(lineData.toLowerCase().contains("manager"))
+                            result3 = lineData;
+
+
 
 //                        result += "";
 //                        result1 += "";
 //                        result3 +="";
-//                        job.add(result3);
+                      job.add(result3);
 
                     }
 
@@ -412,7 +425,11 @@ public class RecognizeActivity extends SalesforceActivity {
 
                 }
                 mEditText.setText(getMobileNumber());
+                mEditPhoneText.setText(getPhoneNumber());
+                mEditFaxText.setText(getFaxNumber());
                 mEditEmailText.setText(result1);
+                mEditCompanyText.setText(matchCompanyName());
+                mailingAddress.setText(matchCountryName());
              //   mEditAddressText.setText(result3);
                 mSpinner = (Spinner) findViewById(R.id.name);
                 RecognizeActivity.NameAdapter nameAdapter = new RecognizeActivity.NameAdapter(name);
@@ -431,12 +448,13 @@ public class RecognizeActivity extends SalesforceActivity {
                 });
                 lSpinner=(Spinner)findViewById(R.id.lastname);
                 lSpinner.setAdapter(nameAdapter);
-                   jobSpinner =(Spinner)findViewById(R.id.job);
+                jobSpinner =(Spinner)findViewById(R.id.job);
                 RecognizeActivity.JobTitle jobAdapter =new RecognizeActivity.JobTitle(job);
                 jobSpinner.setAdapter(jobAdapter);
 
             }
             mButtonSelectImage.setEnabled(true);
+            mButtonUpload.setEnabled(true);
         }
 
     }
@@ -447,7 +465,7 @@ public class RecognizeActivity extends SalesforceActivity {
         for(String value : allValues)
         {
             int i = 0;
-            if(value.toLowerCase().contains("mobile") || value.toLowerCase().contains("m") || value.toLowerCase().contains("mob"))
+            if(value.toLowerCase().contains("mobile") || value.toLowerCase().contains("m") || value.toLowerCase().contains("mob") || value.toLowerCase().contains("cell"))
             {
                 int index = allValues.indexOf(value);
                 if((index + 1) < allValues.size() && IsInteger(allValues.get(index + 1)))
@@ -475,6 +493,122 @@ public class RecognizeActivity extends SalesforceActivity {
         }
         return number;
     }
+    private String getPhoneNumber()
+    {
+        String number = new String();
+        for(String value : allValues)
+        {
+            int i = 0;
+            if(value.toLowerCase().contains("phone") || value.toLowerCase().contains("tel") || value.toLowerCase().contains("direct") || value.toLowerCase().contains("ph") || value.toLowerCase().contains("t"))
+            {
+                int index = allValues.indexOf(value);
+                if((index + 1) < allValues.size() && IsInteger(allValues.get(index + 1)))
+                {
+                    number = allValues.get(index + 1) + " ";
+                    i = index + 2;
+                }
+                else
+                {
+                    continue;
+                }
+                while (!allValues.get(i).contains("+") || IsInteger(allValues.get(i)))
+                {
+
+                    if (allValues.get(i).matches("[+]?[0-9]{10}") || allValues.get(i).matches("^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$") || allValues.get(i).matches("[0-9]{10}") || allValues.get(i).matches("[+]?[0-9]{2}[-][0-9]{10}") || allValues.get(i).matches("[+]?[0-9]{12}") || allValues.get(i).matches("^(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*$"))
+                    {
+                        number += allValues.get(i) + " ";
+                    }
+                    i++;
+
+                    if(i >= allValues.size() || allValues.get(i).toLowerCase().contains("mobile") || allValues.get(i).toLowerCase().contains("m")
+                            || allValues.get(i).toLowerCase().contains("mob") || allValues.get(i).toLowerCase().contains("cell") || allValues.get(i).toLowerCase().contains("fax")
+                            || allValues.get(i).toLowerCase().contains("f"))
+                        break;
+                }
+            }
+        }
+        return number;
+    }
+
+    private String getFaxNumber()
+    {
+        String number = new String();
+        for(String value : allValues)
+        {
+            int i = 0;
+            if(value.toLowerCase().contains("fax") || value.toLowerCase().contains("f"))
+            {
+                int index = allValues.indexOf(value);
+                if((index + 1) < allValues.size() && IsInteger(allValues.get(index + 1)))
+                {
+                    number = allValues.get(index + 1) + " ";
+                    i = index + 2;
+                }
+                else
+                {
+                    continue;
+                }
+                while (!allValues.get(i).contains("+") || IsInteger(allValues.get(i)))
+                {
+
+                    if (allValues.get(i).matches("[+]?[0-9]{10}") || allValues.get(i).matches("^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$") || allValues.get(i).matches("[0-9]{10}") || allValues.get(i).matches("[+]?[0-9]{2}[-][0-9]{10}") || allValues.get(i).matches("[+]?[0-9]{12}") || allValues.get(i).matches("^(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*$"))
+                    {
+                        number += allValues.get(i) + " ";
+                    }
+                    i++;
+
+                    if(i >= allValues.size() || allValues.get(i).toLowerCase().contains("mobile") || allValues.get(i).toLowerCase().contains("m")
+                            || allValues.get(i).toLowerCase().contains("mob") || allValues.get(i).toLowerCase().contains("cell") || allValues.get(i).toLowerCase().contains("phone")
+                            || allValues.get(i).toLowerCase().contains("tel") || allValues.get(i).toLowerCase().contains("direct") || allValues.get(i).toLowerCase().contains("ph") || allValues.get(i).toLowerCase().contains("t") )
+                        break;
+                }
+            }
+        }
+        return number;
+    }
+private String matchCompanyName()
+{
+
+    String Companyname="@SAAB";
+    String SecondCompanyName="BAE";
+    String ThirdCompanyName="SA";
+
+
+        if(allValues.contains(Companyname))
+        {
+            String result="SAAB";
+            return result;
+        }
+        if(allValues.contains(SecondCompanyName))
+        {
+            String result="BAE SYSTEMS";
+            return result;
+        }
+        if(allValues.contains(ThirdCompanyName))
+        {
+            String result="Biomill SA";
+            return result;
+        }
+
+
+
+    return "";
+}
+    private String matchCountryName()
+    {
+       ArrayList<String> result=new ArrayList<>();
+        Country country=new Country();
+        result=country.getAllCountryName();
+        for(String value : allValues)
+        {
+        if(result.contains(value))
+        {
+            return value;
+        }
+
+        }
+        return "";
+    }
 
     private boolean IsInteger(String value)
     {
@@ -492,7 +626,11 @@ public class RecognizeActivity extends SalesforceActivity {
         ArrayList<String> names = new ArrayList<>();
         public NameAdapter(ArrayList<String> names)
         {
-            this.names=names;
+            for (String str : names) {
+                if(!this.names.contains(str.trim()) && str.trim() != "") {
+                    this.names.add(str.trim());
+                }
+            }
         }
         @Override
         public int getCount()
@@ -535,7 +673,11 @@ public class RecognizeActivity extends SalesforceActivity {
         ArrayList<String> job = new ArrayList<>();
         public JobTitle(ArrayList<String> job)
         {
-            this.job=job;
+            for (String str : job) {
+                if(!this.job.contains(str.trim()) && str.trim() != "") {
+                    this.job.add(str.trim());
+                }
+            }
         }
         @Override
         public int getCount() {
@@ -564,7 +706,6 @@ public class RecognizeActivity extends SalesforceActivity {
             {
                 jobView = getLayoutInflater().inflate(R.layout.name_item, parent, false);
             }
-
             TextView nameItem = (TextView) jobView.findViewById(R.id.nameItem);
             nameItem.setText(job.get(position));
             return jobView;

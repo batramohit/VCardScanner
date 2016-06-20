@@ -10,183 +10,199 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.euromonitor.RecognizeActivity">
-        <LinearLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:rowCount="13"
+            android:columnCount="2"
             >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:text="Select an image to recognize text"/>
-            </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Select Image"
+                android:layout_row="1"
+                android:layout_column="0"
                 android:layout_marginTop="20dp"
-
                 android:id="@+id/buttonSelectImage"
                 android:onClick="selectImage"/>
             <ImageView
                 android:id="@+id/selectedImage"
                 android:layout_width="250dp"
+                android:layout_row="1"
+                android:layout_column="1"
                 android:layout_height="100dp"
                 android:layout_toRightOf="@+id/image_control"
                 android:layout_toEndOf="@+id/image_control"
                 android:background="#E0E0E0"/>
-    </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/darker_gray"
-                />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-
-                android:text="Mobile"/>
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="40dp"
-                android:id="@+id/editTextResult"
-                android:layout_weight="1" />
-        </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-
-        />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Email"/>
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="50dp"
-                    android:id="@+id/editTextEmailResult"
-                    android:layout_weight="1" />
-        </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_row="2"
+                android:layout_columnWeight="0"
+                android:layout_column="0"
                 android:text="First Name"/>
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="10dp"
                 android:drawSelectorOnTop="true"
+                android:layout_columnWeight="1"
                 android:id="@+id/name"
-                android:layout_marginRight="30dp"
+                android:layout_row="2"
+                android:layout_column="1"
                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_row="3"
+                android:layout_column="0"
+                android:layout_gravity="left"
+                android:text="Last Name"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawSelectorOnTop="true"
+                android:layout_marginTop="10dp"
+                android:layout_row="3"
+                android:layout_column="1"
+                android:layout_gravity="left"
+                android:id="@+id/lastname"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_row="4"
+                android:layout_column="0"
+                android:text="Mobile"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        />
-    <!--<LinearLayout-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content">-->
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="20dp"-->
-            <!--android:text="Fax"/>-->
-        <!--<EditText-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="20dp"-->
-            <!--android:layout_marginLeft="50dp"-->
-            <!--android:id="@+id/editTextAddressResult"-->
-            <!--android:layout_weight="1" />-->
-    <!--</LinearLayout>-->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Last Name"/>
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawSelectorOnTop="true"
-            android:id="@+id/lastname"
-            android:layout_marginRight="20dp"
-            />
+                android:layout_gravity="left"
+                android:layout_marginTop="20dp"
+                android:layout_row="4"
+                android:layout_column="1"
+                android:id="@+id/editTextResult"
+                android:layout_weight="1" />
 
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Country"/>
-        <AutoCompleteTextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="50dp"
-            android:id="@+id/mailingAddress"/>
-        </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Job Title"/>
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawSelectorOnTop="true"
-            android:id="@+id/job"
-            android:layout_marginRight="20dp"
-            />
-    </LinearLayout>
-    <Button
-        android:onClick="uploadContact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upload"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="5"
+                android:layout_marginTop="20dp"
+                android:layout_column="0"
+                android:text="Phone"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="20dp"
+                android:layout_row="5"
+                android:layout_column="1"
+                android:id="@+id/editPhoneResult"
+                android:layout_weight="1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="6"
+                android:layout_marginTop="20dp"
+                android:layout_column="0"
+                android:text="Fax"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="6"
+                android:layout_column="1"
+                android:layout_marginTop="20dp"
+                android:id="@+id/editFaxResult"
+                android:layout_weight="1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_row="7"
+                android:layout_column="0"
+                android:text="Email"/>
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_row="7"
+                android:layout_column="1"
+                android:layout_marginRight="40dp"
+               android:layout_gravity="left"
+                android:layout_marginTop="20dp"
+                android:id="@+id/editTextEmailResult"
+                android:layout_weight="1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="8"
+                android:layout_column="0"
+                android:layout_marginTop="20dp"
+                android:text="Country"/>
+            <AutoCompleteTextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_row="8"
+                android:layout_column="1"
+                android:layout_gravity="left"
+                android:layout_marginRight="40dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/mailingAddress"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="9"
+                android:layout_column="0"
+                android:layout_marginTop="20dp"
+                android:text="Job Title"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="10dp"
+                android:drawSelectorOnTop="true"
+                android:layout_columnWeight="1"
+                android:id="@+id/job"
+                android:layout_row="9"
+                android:layout_column="1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_row="10"
+                android:layout_column="0"
+                android:text="Company"/>
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_row="10"
+                android:layout_column="1"
+                android:layout_marginRight="40dp"
+                android:layout_gravity="left"
+                android:layout_marginTop="20dp"
+                android:id="@+id/editTextCompanyResult"
+                android:layout_weight="1" />
+            <Button
+                android:onClick="uploadContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/upload"
+                android:layout_row="11"
+                android:layout_column="0"
+                android:text="Upload"/>
+            </GridLayout>
+        </ScrollView>
     </LinearLayout>

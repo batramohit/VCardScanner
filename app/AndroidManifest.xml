@@ -32,12 +32,14 @@
 
         <activity android:name=".ContactActivity"
             android:label="@string/app_name"
-            android:theme="@style/SalesforceSDK.ActionBarTheme">
+            android:theme="@style/SalesforceSDK.ActionBarTheme"
+            android:parentActivityName=".RecognizeActivity">
         </activity>
 
         <activity android:name=".AccountActivity"
             android:label="@string/app_name"
-            android:theme="@style/SalesforceSDK.ActionBarTheme">
+            android:theme="@style/SalesforceSDK.ActionBarTheme"
+            android:parentActivityName=".RecognizeActivity">
         </activity>
 
         <activity
